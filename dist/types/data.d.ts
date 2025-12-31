@@ -12,45 +12,35 @@ export declare const example: {
         runQuery: string;
     };
     cards: {
-        card7: {
+        card1: {
             title: string;
-            width: number;
+            policy: string;
             config: {
                 type: string;
-                subType: string;
-                options: {
-                    title: {
-                        text: string;
-                    };
-                    tooltip: {
-                        trigger: string;
-                    };
-                    xAxis: {
-                        type: string;
-                    };
-                    yAxis: {
-                        type: string;
-                    };
-                    series: {
-                        type: string;
-                        name: string;
-                        smooth: boolean;
-                    }[];
-                };
             };
             source: {
                 type: string;
                 table: string;
                 cols: string;
-                where: {
-                    "leads_tbl.blocked": string;
-                    "leads_tbl.guid='{$_SESSION['SESS_GUID']}'": string;
-                    "lead_date >='{$startDate}'": string;
-                    "lead_date <='{$endDate}'": string;
-                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
-                };
                 groupby: string;
             };
+            width: number;
+            widget: string;
+        };
+        card2: {
+            title: string;
+            policy: string;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                table: string;
+                cols: string;
+                groupby: string;
+            };
+            width: number;
+            widget: string;
         };
     };
 };

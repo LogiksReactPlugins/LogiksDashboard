@@ -9,14 +9,14 @@ export default function Card({ config, methods, sqlOpsUrls }: CardProps) {
 
     return (
         <div className={`col-span-12 md:col-span-6 ${tailwindCols[toColWidth(Number(w))] || "lg:col-span-4"}
-        bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700
+        bg-white  border border-neutral-200 
         rounded-xl shadow-sm hover:shadow-md transition-all duration-300
-         flex flex-col gap-3
+         flex flex-col   
   `}
         >
-            <div className=" px-4 py-2 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-700">
+            <div className=" px-4 py-2 flex items-center justify-between border-b border-neutral-200 ">
 
-                <h2 className="text-base font-semibold text-neutral-700 dark:text-neutral-100">
+                <h2 className="text-base font-semibold text-neutral-700 ">
                     {config.title}
                 </h2>
             </div>

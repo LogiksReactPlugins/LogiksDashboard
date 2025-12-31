@@ -1,7 +1,7 @@
 import ne, { useState as W, useEffect as M } from "react";
-import ae from "logiks-chart";
-import { Settings as oe } from "lucide-react";
-var T = { exports: {} }, j = {};
+import oe from "logiks-chart";
+import { Settings as ae } from "lucide-react";
+var T = { exports: {} }, E = {};
 /**
  * @license React
  * react-jsx-runtime.production.js
@@ -13,9 +13,9 @@ var T = { exports: {} }, j = {};
  */
 var F;
 function se() {
-  if (F) return j;
+  if (F) return E;
   F = 1;
-  var a = Symbol.for("react.transitional.element"), c = Symbol.for("react.fragment");
+  var o = Symbol.for("react.transitional.element"), c = Symbol.for("react.fragment");
   function n(t, i, m) {
     var h = null;
     if (m !== void 0 && (h = "" + m), i.key !== void 0 && (h = "" + i.key), "key" in i) {
@@ -24,16 +24,16 @@ function se() {
         b !== "key" && (m[b] = i[b]);
     } else m = i;
     return i = m.ref, {
-      $$typeof: a,
+      $$typeof: o,
       type: t,
       key: h,
       ref: i !== void 0 ? i : null,
       props: m
     };
   }
-  return j.Fragment = c, j.jsx = n, j.jsxs = n, j;
+  return E.Fragment = c, E.jsx = n, E.jsxs = n, E;
 }
-var E = {};
+var v = {};
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -46,7 +46,7 @@ var E = {};
 var J;
 function le() {
   return J || (J = 1, process.env.NODE_ENV !== "production" && (function() {
-    function a(e) {
+    function o(e) {
       if (e == null) return null;
       if (typeof e == "function")
         return e.$$typeof === ee ? null : e.displayName || e.name || null;
@@ -79,11 +79,11 @@ function le() {
             var r = e.render;
             return e = e.displayName, e || (e = r.displayName || r.name || "", e = e !== "" ? "ForwardRef(" + e + ")" : "ForwardRef"), e;
           case U:
-            return r = e.displayName || null, r !== null ? r : a(e.type) || "Memo";
+            return r = e.displayName || null, r !== null ? r : o(e.type) || "Memo";
           case O:
             r = e._payload, e = e._init;
             try {
-              return a(e(r));
+              return o(e(r));
             } catch {
             }
         }
@@ -114,14 +114,14 @@ function le() {
       if (typeof e == "object" && e !== null && e.$$typeof === O)
         return "<...>";
       try {
-        var r = a(e);
+        var r = o(e);
         return r ? "<" + r + ">" : "<...>";
       } catch {
         return "<...>";
       }
     }
     function i() {
-      var e = k.A;
+      var e = w.A;
       return e === null ? null : e.getOwner();
     }
     function m() {
@@ -147,12 +147,12 @@ function le() {
       });
     }
     function f() {
-      var e = a(this.type);
+      var e = o(this.type);
       return $[e] || ($[e] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), e = this.props.ref, e !== void 0 ? e : null;
     }
-    function s(e, r, l, u, x, g, N, S) {
+    function s(e, r, l, u, x, g, k, S) {
       return l = g.ref, e = {
         $$typeof: A,
         type: e,
@@ -176,7 +176,7 @@ function le() {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: N
+        value: k
       }), Object.defineProperty(e, "_debugTask", {
         configurable: !1,
         enumerable: !1,
@@ -184,7 +184,7 @@ function le() {
         value: S
       }), Object.freeze && (Object.freeze(e.props), Object.freeze(e)), e;
     }
-    function y(e, r, l, u, x, g, N, S) {
+    function y(e, r, l, u, x, g, k, S) {
       var d = r.children;
       if (d !== void 0)
         if (u)
@@ -198,11 +198,11 @@ function le() {
             );
         else p(d);
       if (C.call(r, "key")) {
-        d = a(e);
-        var v = Object.keys(r).filter(function(te) {
+        d = o(e);
+        var j = Object.keys(r).filter(function(te) {
           return te !== "key";
         });
-        u = 0 < v.length ? "{key: someKey, " + v.join(": ..., ") + ": ...}" : "{key: someKey}", D[d + u] || (v = 0 < v.length ? "{" + v.join(": ..., ") + ": ...}" : "{}", console.error(
+        u = 0 < j.length ? "{key: someKey, " + j.join(": ..., ") + ": ...}" : "{key: someKey}", D[d + u] || (j = 0 < j.length ? "{" + j.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -211,7 +211,7 @@ React keys must be passed directly to JSX without using spread:
   <%s key={someKey} {...props} />`,
           u,
           d,
-          v,
+          j,
           d
         ), D[d + u] = !0);
       }
@@ -230,14 +230,14 @@ React keys must be passed directly to JSX without using spread:
         x,
         i(),
         l,
-        N,
+        k,
         S
       );
     }
     function p(e) {
       typeof e == "object" && e !== null && e.$$typeof === A && e._store && (e._store.validated = 1);
     }
-    var R = ne, A = Symbol.for("react.transitional.element"), q = Symbol.for("react.portal"), _ = Symbol.for("react.fragment"), G = Symbol.for("react.strict_mode"), Q = Symbol.for("react.profiler"), V = Symbol.for("react.consumer"), B = Symbol.for("react.context"), X = Symbol.for("react.forward_ref"), H = Symbol.for("react.suspense"), Z = Symbol.for("react.suspense_list"), U = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), K = Symbol.for("react.activity"), ee = Symbol.for("react.client.reference"), k = R.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, C = Object.prototype.hasOwnProperty, re = Array.isArray, w = console.createTask ? console.createTask : function() {
+    var R = ne, A = Symbol.for("react.transitional.element"), q = Symbol.for("react.portal"), _ = Symbol.for("react.fragment"), G = Symbol.for("react.strict_mode"), Q = Symbol.for("react.profiler"), V = Symbol.for("react.consumer"), B = Symbol.for("react.context"), X = Symbol.for("react.forward_ref"), H = Symbol.for("react.suspense"), Z = Symbol.for("react.suspense_list"), U = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), K = Symbol.for("react.activity"), ee = Symbol.for("react.client.reference"), w = R.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, C = Object.prototype.hasOwnProperty, re = Array.isArray, N = console.createTask ? console.createTask : function() {
       return null;
     };
     R = {
@@ -248,9 +248,9 @@ React keys must be passed directly to JSX without using spread:
     var Y, $ = {}, I = R.react_stack_bottom_frame.bind(
       R,
       m
-    )(), L = w(t(m)), D = {};
-    E.Fragment = _, E.jsx = function(e, r, l, u, x) {
-      var g = 1e4 > k.recentlyCreatedOwnerStacks++;
+    )(), L = N(t(m)), D = {};
+    v.Fragment = _, v.jsx = function(e, r, l, u, x) {
+      var g = 1e4 > w.recentlyCreatedOwnerStacks++;
       return y(
         e,
         r,
@@ -259,10 +259,10 @@ React keys must be passed directly to JSX without using spread:
         u,
         x,
         g ? Error("react-stack-top-frame") : I,
-        g ? w(t(e)) : L
+        g ? N(t(e)) : L
       );
-    }, E.jsxs = function(e, r, l, u, x) {
-      var g = 1e4 > k.recentlyCreatedOwnerStacks++;
+    }, v.jsxs = function(e, r, l, u, x) {
+      var g = 1e4 > w.recentlyCreatedOwnerStacks++;
       return y(
         e,
         r,
@@ -271,16 +271,16 @@ React keys must be passed directly to JSX without using spread:
         u,
         x,
         g ? Error("react-stack-top-frame") : I,
-        g ? w(t(e)) : L
+        g ? N(t(e)) : L
       );
     };
-  })()), E;
+  })()), v;
 }
 var z;
 function ie() {
   return z || (z = 1, process.env.NODE_ENV === "production" ? T.exports = se() : T.exports = le()), T.exports;
 }
-var o = ie();
+var a = ie();
 const ce = {
   12: "lg:col-span-12",
   11: "lg:col-span-11",
@@ -295,11 +295,11 @@ const ce = {
   2: "lg:col-span-2",
   1: "lg:col-span-1"
 };
-function ue(a) {
-  return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].includes(a) ? a : 6;
+function ue(o) {
+  return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].includes(o) ? o : 6;
 }
-function de({ cardConfig: a, methods: c = {}, sqlOpsUrls: n }) {
-  const { source: t } = a, [i, m] = W(0);
+function de({ cardConfig: o, methods: c = {}, sqlOpsUrls: n }) {
+  const { source: t } = o, [i, m] = W(0);
   M(() => {
     (async () => {
       let f = {};
@@ -354,14 +354,14 @@ function de({ cardConfig: a, methods: c = {}, sqlOpsUrls: n }) {
     })();
   }, [JSON.stringify(t)]);
   const h = typeof i == "number" || typeof i == "string";
-  return /* @__PURE__ */ o.jsx("div", { className: `
+  return /* @__PURE__ */ a.jsx("div", { className: `
       flex flex-col justify-center items-start gap-2 
 
     
-    `, children: /* @__PURE__ */ o.jsx("span", { className: "text-3xl font-bold tracking-tight", children: h ? i : "--" }) });
+    `, children: /* @__PURE__ */ a.jsx("span", { className: "text-3xl font-bold tracking-tight", children: h ? i : "--" }) });
 }
-function fe({ cardConfig: a, methods: c = {}, sqlOpsUrls: n }) {
-  const { source: t } = a, [i, m] = W(0);
+function fe({ cardConfig: o, methods: c = {}, sqlOpsUrls: n }) {
+  const { source: t } = o, [i, m] = W(0);
   if (M(() => {
     (async () => {
       let f = {};
@@ -415,60 +415,60 @@ function fe({ cardConfig: a, methods: c = {}, sqlOpsUrls: n }) {
       console.log("CardRenderer result", f), m(f);
     })();
   }, [JSON.stringify(t)]), !Array.isArray(i))
-    return console.warn("GridCard expected array but got:", i), /* @__PURE__ */ o.jsx("div", { children: "No table data" });
-  if (!i.length) return /* @__PURE__ */ o.jsx("div", { children: "No records found" });
+    return console.warn("GridCard expected array but got:", i), /* @__PURE__ */ a.jsx("div", { children: "No table data" });
+  if (!i.length) return /* @__PURE__ */ a.jsx("div", { children: "No records found" });
   const h = Object.keys(i[0] || {});
-  return /* @__PURE__ */ o.jsx("div", { className: "w-full overflow-auto rounded-lg ", children: /* @__PURE__ */ o.jsxs("table", { className: "w-full text-sm border", children: [
-    /* @__PURE__ */ o.jsx("thead", { className: "bg-neutral-100 dark:bg-neutral-800", children: /* @__PURE__ */ o.jsx("tr", { children: h.map((b) => /* @__PURE__ */ o.jsx("th", { className: "p-3 text-left font-semibold capitalize", children: b.replace(/_/g, " ") }, b)) }) }),
-    /* @__PURE__ */ o.jsx("tbody", { children: i.map((b, f) => /* @__PURE__ */ o.jsx("tr", { className: "odd:bg-white even:bg-neutral-50 dark:odd:bg-neutral-900 dark:even:bg-neutral-800", children: h.map((s) => /* @__PURE__ */ o.jsx("td", { className: "p-3 border-b dark:border-neutral-700", children: b[s] }, s)) }, f)) })
+  return /* @__PURE__ */ a.jsx("div", { className: "w-full overflow-auto rounded-lg ", children: /* @__PURE__ */ a.jsxs("table", { className: "w-full text-sm border", children: [
+    /* @__PURE__ */ a.jsx("thead", { className: "bg-neutral-100 ", children: /* @__PURE__ */ a.jsx("tr", { children: h.map((b) => /* @__PURE__ */ a.jsx("th", { className: "p-3 text-left font-semibold capitalize", children: b.replace(/_/g, " ") }, b)) }) }),
+    /* @__PURE__ */ a.jsx("tbody", { children: i.map((b, f) => /* @__PURE__ */ a.jsx("tr", { className: "odd:bg-white even:bg-neutral-50", children: h.map((s) => /* @__PURE__ */ a.jsx("td", { className: "p-3 border-b ", children: b[s] }, s)) }, f)) })
   ] }) });
 }
-const me = ({ cardConfig: a, methods: c = {}, sqlOpsUrls: n }) => {
-  if (!a?.config?.type) return null;
-  switch (console.log("sqlOpsUrls", n), a?.config.type) {
+const me = ({ cardConfig: o, methods: c = {}, sqlOpsUrls: n }) => {
+  if (!o?.config?.type) return null;
+  switch (o?.config.type) {
     case "number":
-      return /* @__PURE__ */ o.jsx(de, { cardConfig: a, methods: c, sqlOpsUrls: n });
+      return /* @__PURE__ */ a.jsx(de, { cardConfig: o, methods: c, sqlOpsUrls: n });
     case "grid":
-      return /* @__PURE__ */ o.jsx(fe, { cardConfig: a, methods: c, sqlOpsUrls: n });
+      return /* @__PURE__ */ a.jsx(fe, { cardConfig: o, methods: c, sqlOpsUrls: n });
     default:
-      return /* @__PURE__ */ o.jsx(ae, { config: a, methods: c, sqlOpsConfig: n });
+      return /* @__PURE__ */ a.jsx(oe, { config: o, methods: c, sqlOpsConfig: n });
   }
 };
-function be({ config: a, methods: c, sqlOpsUrls: n }) {
-  const t = a.width ?? 6;
-  return /* @__PURE__ */ o.jsxs(
+function be({ config: o, methods: c, sqlOpsUrls: n }) {
+  const t = o.width ?? 6;
+  return /* @__PURE__ */ a.jsxs(
     "div",
     {
       className: `col-span-12 md:col-span-6 ${ce[ue(Number(t))] || "lg:col-span-4"}
-        bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700
+        bg-white  border border-neutral-200 
         rounded-xl shadow-sm hover:shadow-md transition-all duration-300
-         flex flex-col gap-3
+         flex flex-col   
   `,
       children: [
-        /* @__PURE__ */ o.jsx("div", { className: " px-4 py-2 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-700", children: /* @__PURE__ */ o.jsx("h2", { className: "text-base font-semibold text-neutral-700 dark:text-neutral-100", children: a.title }) }),
-        /* @__PURE__ */ o.jsx("div", { className: " p-4 flex-1", children: /* @__PURE__ */ o.jsx(me, { cardConfig: a, methods: c ?? {}, sqlOpsUrls: n }) })
+        /* @__PURE__ */ a.jsx("div", { className: " px-4 py-2 flex items-center justify-between border-b border-neutral-200 ", children: /* @__PURE__ */ a.jsx("h2", { className: "text-base font-semibold text-neutral-700 ", children: o.title }) }),
+        /* @__PURE__ */ a.jsx("div", { className: " p-4 flex-1", children: /* @__PURE__ */ a.jsx(me, { cardConfig: o, methods: c ?? {}, sqlOpsUrls: n }) })
       ]
     }
   );
 }
-function ye({ dashboardJson: a, methods: c }) {
-  return /* @__PURE__ */ o.jsxs("div", { className: "p-5 space-y-6", children: [
-    /* @__PURE__ */ o.jsxs("div", { className: "flex items-center justify-between", children: [
-      /* @__PURE__ */ o.jsx("h1", { className: "text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100", children: a.title }),
-      /* @__PURE__ */ o.jsx(
+function ye({ dashboardJson: o, methods: c }) {
+  return /* @__PURE__ */ a.jsxs("div", { className: "p-5 space-y-6", children: [
+    /* @__PURE__ */ a.jsxs("div", { className: "flex items-center justify-between", children: [
+      /* @__PURE__ */ a.jsx("h1", { className: "text-2xl font-bold tracking-tight text-neutral-800", children: o.title }),
+      /* @__PURE__ */ a.jsx(
         "button",
         {
           className: `
-            p-2 rounded-lg border border-neutral-200 dark:border-neutral-700
-            hover:bg-neutral-100 dark:hover:bg-neutral-800
+            p-2 rounded-lg border border-neutral-200 
+            hover:bg-neutral-100 
             transition-all duration-200
           `,
           onClick: () => console.log("Open Settings"),
-          children: /* @__PURE__ */ o.jsx(oe, { size: 20, className: "text-neutral-600 dark:text-neutral-200" })
+          children: /* @__PURE__ */ a.jsx(ae, { size: 20, className: "text-neutral-600 " })
         }
       )
     ] }),
-    /* @__PURE__ */ o.jsx("div", { className: "grid grid-cols-12 gap-5 auto-rows-min", children: Object.values(a.cards).map((n, t) => /* @__PURE__ */ o.jsx(be, { config: n, methods: c || {}, sqlOpsUrls: a.endPoints }, t)) })
+    /* @__PURE__ */ a.jsx("div", { className: "grid grid-cols-12 gap-5 auto-rows-min", children: Object.values(o.cards).map((n, t) => /* @__PURE__ */ a.jsx(be, { config: n, methods: c || {}, sqlOpsUrls: o.endPoints }, t)) })
   ] });
 }
 export {
