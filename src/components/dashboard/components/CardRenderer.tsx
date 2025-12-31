@@ -11,7 +11,7 @@ const CardRenderer = ({ cardConfig, methods = {}, sqlOpsUrls }: CardRendererProp
 
   if (!cardConfig?.config?.type) return null;
 
-console.log("cardConfig?.config.type",cardConfig?.config.type)
+console.log("sqlOpsUrls",sqlOpsUrls)
   switch (cardConfig?.config.type) {
     case "number": return <NumberCard cardConfig={cardConfig} methods={methods} sqlOpsUrls={sqlOpsUrls} />;
     case "grid": return <GridCard cardConfig={cardConfig} methods={methods} sqlOpsUrls={sqlOpsUrls} />;

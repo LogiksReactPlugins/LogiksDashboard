@@ -31,9 +31,7 @@ export default defineConfig(({ mode }) => {
         output: {
           globals: {
             react: 'React',
-            'react-dom': 'ReactDOM',
-            'logiks-chart': 'LogiksChart',
-            'lucide-react': 'LucideReact'
+            'react-dom': 'ReactDOM'
           }
         }
       },

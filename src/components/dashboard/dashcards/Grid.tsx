@@ -1,4 +1,4 @@
-import { CardRendererProps } from "@/dashboard/Dashboard.types";
+import { CardRendererProps } from "@/components/dashboard/Dashboard.types";
 import { useEffect, useState } from "react";
 
 export default function GridCard({ cardConfig, methods = {}, sqlOpsUrls }: CardRendererProps) {

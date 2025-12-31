@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CardRendererProps } from "@/dashboard/Dashboard.types";
+import { CardRendererProps } from "@/components/dashboard/Dashboard.types";
 
 
 
