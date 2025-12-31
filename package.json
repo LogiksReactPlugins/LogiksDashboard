@@ -19,14 +19,13 @@
   "author": "Smartinfologiks",
   "license": "MIT",
   "peerDependencies": {
+    "lucide-react": "*",
     "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0",
-    "logiks-chart": "*",
-    "lucide-react": "*"
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
     "logiks-chart": "github:LogiksReactPlugins/LogiksCharts",
-    "lucide-react": "^0.562.0"
+    "lucide-react": "*"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
