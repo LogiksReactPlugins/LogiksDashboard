@@ -1,23 +1,20 @@
 import { CardRendererProps } from "@/components/dashboard/Dashboard.types";
 import { useEffect, useState } from "react";
+import { normalizeGridData } from "../utils";
 
 export default function GridCard({ cardConfig, methods = {}, sqlOpsUrls }: CardRendererProps) {
 
-
   const { source } = cardConfig;
-
-
   const [data, setData] = useState<any>(0);
 
   useEffect(() => {
     const load = async () => {
       let result = {};
-      console.log("source type");
+
 
       if (source?.type === "method") {
         const fn = methods[source.method as keyof typeof methods];
         result = fn ? await Promise.resolve(fn()) : {};
-
 
       } else if (source?.type === "api" && source.url) {
         result = await fetch(source.url, {
@@ -40,11 +37,7 @@ export default function GridCard({ cardConfig, methods = {}, sqlOpsUrls }: CardR
               "Authorization": `Bearer ${sqlOpsUrls?.accessToken}`
             },
             body: JSON.stringify({
-              query: {
-                cols: source.cols,
-                table: source.table,
-
-              }
+              query: source
             })
           })
             .then(res => res.json());
@@ -72,17 +65,18 @@ export default function GridCard({ cardConfig, methods = {}, sqlOpsUrls }: CardR
 
           }).then(res => res.json());
 
-          result = res?.data?.data ?? res?.data ?? {}
+          result = res?.data?.data ?? res?.data ?? []
 
         } catch (err) {
           console.error("API fetch failed:", err);
         }
 
       }
-      console.log("CardRenderer result", result)
+      
 
+      const normalized = normalizeGridData(result)
 
-      setData(result); // <-- only normalized data
+      setData(normalized);
     };
 
     load();

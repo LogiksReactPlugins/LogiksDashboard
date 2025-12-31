@@ -14,7 +14,7 @@ export declare const example: {
     cards: {
         card1: {
             title: string;
-            policy: string;
+            width: number;
             config: {
                 type: string;
             };
@@ -22,25 +22,15 @@ export declare const example: {
                 type: string;
                 table: string;
                 cols: string;
+                where: {
+                    "leads_tbl.blocked": string;
+                    "leads_tbl.guid='{$_SESSION['SESS_GUID']}'": string;
+                    "lead_date >='{$startDate}'": string;
+                    "lead_date <='{$endDate}'": string;
+                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                };
                 groupby: string;
             };
-            width: number;
-            widget: string;
-        };
-        card2: {
-            title: string;
-            policy: string;
-            config: {
-                type: string;
-            };
-            source: {
-                type: string;
-                table: string;
-                cols: string;
-                groupby: string;
-            };
-            width: number;
-            widget: string;
         };
     };
 };
@@ -58,6 +48,59 @@ export declare const exapmle1: {
         runQuery: string;
     };
     cards: {
+        card1: {
+            title: string;
+            width: number;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                table: string;
+                cols: string;
+                where: {
+                    "leads_tbl.blocked": string;
+                    "leads_tbl.guid='{$_SESSION['SESS_GUID']}'": string;
+                    "lead_date >='{$startDate}'": string;
+                    "lead_date <='{$endDate}'": string;
+                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                };
+                groupby: string;
+            };
+        };
+        card2: {
+            title: string;
+            width: number;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                method: string;
+            };
+        };
+        card3: {
+            title: string;
+            width: number;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                method: string;
+            };
+        };
+        card4: {
+            title: string;
+            width: number;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                method: string;
+            };
+        };
         card0: {
             title: string;
             width: number;
@@ -89,46 +132,13 @@ export declare const exapmle1: {
                 table: string;
                 cols: string;
                 where: {
-                    "lead_tbl.blocked": string;
-                    "lead_tbl.guid='{$_SESSION['SESS_GUID']}'": string;
+                    "leads_tbl.blocked": string;
+                    "leads_tbl.guid='{$_SESSION['SESS_GUID']}'": string;
                     "lead_date >='{$startDate}'": string;
                     "lead_date <='{$endDate}'": string;
-                    "(lead_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
-            };
-        };
-        card1: {
-            title: string;
-            width: number;
-            config: {
-                type: string;
-            };
-            source: {
-                type: string;
-                method: string;
-            };
-        };
-        card2: {
-            title: string;
-            width: number;
-            config: {
-                type: string;
-            };
-            source: {
-                type: string;
-                method: string;
-            };
-        };
-        card3: {
-            title: string;
-            width: number;
-            config: {
-                type: string;
-            };
-            source: {
-                type: string;
-                method: string;
             };
         };
         card7: {
@@ -162,11 +172,11 @@ export declare const exapmle1: {
                 table: string;
                 cols: string;
                 where: {
-                    "lead_tbl.blocked": string;
-                    "lead_tbl.guid='{$_SESSION['SESS_GUID']}'": string;
+                    "leads_tbl.blocked": string;
+                    "leads_tbl.guid='{$_SESSION['SESS_GUID']}'": string;
                     "lead_date >='{$startDate}'": string;
                     "lead_date <='{$endDate}'": string;
-                    "(lead_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
             };
@@ -197,9 +207,9 @@ export declare const exapmle1: {
                 table: string;
                 cols: string;
                 where: {
-                    "lead_tbl.blocked": string;
-                    "lead_tbl.guid": string;
-                    "YEAR(lead_tbl.lead_date)='{$year}' AND (lead_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.manager='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.closed_by='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "leads_tbl.blocked": string;
+                    "leads_tbl.guid": string;
+                    "YEAR(leads_tbl.lead_date)='{$year}' AND (leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.closed_by='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
             };
@@ -268,9 +278,9 @@ export declare const exapmle1: {
                 table: string;
                 cols: string;
                 where: {
-                    "lead_tbl.blocked": string;
-                    "lead_tbl.guid": string;
-                    "YEAR(lead_tbl.lead_date)='{$year}' AND (lead_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.manager='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.closed_by='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "leads_tbl.blocked": string;
+                    "leads_tbl.guid": string;
+                    "YEAR(leads_tbl.lead_date)='{$year}' AND (leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.closed_by='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
             };
@@ -298,8 +308,8 @@ export declare const exapmle1: {
                 table: string;
                 cols: string;
                 where: {
-                    "lead_tbl.blocked": string;
-                    "YEAR(lead_tbl.lead_date)='{$year}' AND lead_tbl.lead_status in ('order','lost') AND (lead_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.manager='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.closed_by='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "leads_tbl.blocked": string;
+                    "YEAR(leads_tbl.lead_date)='{$year}' AND leads_tbl.lead_status in ('order','lost') AND (leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.closed_by='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
             };
@@ -315,10 +325,10 @@ export declare const exapmle1: {
                 table: string;
                 cols: string;
                 where: {
-                    "lead_tbl.blocked": string;
-                    "lead_tbl.guid": string;
-                    "lead_tbl.lead_status != 'junk'": string;
-                    "(lead_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "leads_tbl.blocked": string;
+                    "leads_tbl.guid": string;
+                    "leads_tbl.lead_status != 'junk'": string;
+                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
             };
@@ -356,10 +366,10 @@ export declare const exapmle1: {
                 table: string;
                 cols: string;
                 where: {
-                    "lead_tbl.blocked": string;
-                    "lead_tbl.guid": string;
-                    "YEAR(lead_tbl.lead_date) IN (YEAR(NOW()),YEAR(NOW()) - 1,YEAR(NOW()) - 2)": string;
-                    "(lead_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "leads_tbl.blocked": string;
+                    "leads_tbl.guid": string;
+                    "YEAR(leads_tbl.lead_date) IN (YEAR(NOW()),YEAR(NOW()) - 1,YEAR(NOW()) - 2)": string;
+                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
                 orderby: string;
@@ -377,9 +387,9 @@ export declare const exapmle1: {
                 table: string;
                 cols: string;
                 where: {
-                    "lead_tbl.blocked": string;
-                    "lead_tbl.lead_status in ('order','lost') AND YEAR(lead_tbl.lead_date) IN (YEAR(NOW()),YEAR(NOW()) - 1,YEAR(NOW())-2)": string;
-                    "(lead_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "leads_tbl.blocked": string;
+                    "leads_tbl.lead_status in ('order','lost') AND YEAR(leads_tbl.lead_date) IN (YEAR(NOW()),YEAR(NOW()) - 1,YEAR(NOW())-2)": string;
+                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
                 orderby: string;
@@ -397,9 +407,9 @@ export declare const exapmle1: {
                 table: string;
                 cols: string;
                 where: {
-                    "lead_tbl.guid": string;
-                    "lead_tbl.blocked='false' AND YEAR(lead_tbl.lead_date) IN (YEAR(NOW()),YEAR(NOW()) - 1,YEAR(NOW()) - 2)": string;
-                    "(lead_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR lead_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "leads_tbl.guid": string;
+                    "leads_tbl.blocked='false' AND YEAR(leads_tbl.lead_date) IN (YEAR(NOW()),YEAR(NOW()) - 1,YEAR(NOW()) - 2)": string;
+                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
                 orderby: string;
@@ -419,8 +429,8 @@ export declare const exapmle1: {
                 cols: string;
                 where: {
                     "profiletbl.blocked": string;
-                    "lead_tbl.guid": string;
-                    "lead_tbl.customer_id = profiletbl.id AND lead_tbl.lead_status != 'junk' AND (profiletbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                    "leads_tbl.guid": string;
+                    "leads_tbl.customer_id = profiletbl.id AND leads_tbl.lead_status != 'junk' AND (profiletbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
                 };
                 groupby: string;
                 orderby: string;

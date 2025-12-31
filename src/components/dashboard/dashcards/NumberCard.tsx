@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardRendererProps } from "@/components/dashboard/Dashboard.types";
+import { normalizeNumber } from "../utils";
 
 
 
@@ -41,11 +42,7 @@ export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls }: Car
               "Authorization": `Bearer ${sqlOpsUrls?.accessToken}`
             },
             body: JSON.stringify({
-              query: {
-                cols: source.cols,
-                table: source.table,
-
-              }
+              query: source
             })
           })
             .then(res => res.json());
@@ -81,16 +78,16 @@ export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls }: Car
 
       }
       console.log("CardRenderer result", result)
-      setData(result); // <-- only normalized data
+
+        const normalized = normalizeNumber(result);
+      setData(normalized); // <-- only normalized data
     };
 
     load();
   }, [JSON.stringify(source)]);
 
 
-  const isValid =
-    typeof data === "number" ||
-    typeof data === "string";
+
 
   return (
 
@@ -103,7 +100,7 @@ export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls }: Car
         {config.title}
       </span> */}
       <span className="text-3xl font-bold tracking-tight">
-        {isValid ? data : "--"}
+        {data?.value ?? "--"}
       </span>
     </div>
   );

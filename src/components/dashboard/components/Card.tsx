@@ -11,7 +11,7 @@ export default function Card({ config, methods, sqlOpsUrls }: CardProps) {
         <div className={`col-span-12 md:col-span-6 ${tailwindCols[toColWidth(Number(w))] || "lg:col-span-4"}
         bg-white  border border-neutral-200 
         rounded-xl shadow-sm hover:shadow-md transition-all duration-300
-         flex flex-col   
+         flex flex-col   h-max
   `}
         >
             <div className=" px-4 py-2 flex items-center justify-between border-b border-neutral-200 ">
@@ -21,7 +21,7 @@ export default function Card({ config, methods, sqlOpsUrls }: CardProps) {
                 </h2>
             </div>
 
-            <div className=" p-4 flex-1" >
+            <div className=" p-4 flex-1 " >
                 <CardRenderer cardConfig={config} methods={methods ?? {}} sqlOpsUrls={sqlOpsUrls} />
             </div>
         </div>
