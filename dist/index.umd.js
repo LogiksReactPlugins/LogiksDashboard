@@ -1,4 +1,4 @@
-(function(h,x){typeof exports=="object"&&typeof module<"u"?x(exports,require("react"),require("logiks-chart"),require("lucide-react")):typeof define=="function"&&define.amd?define(["exports","react","logiks-chart","lucide-react"],x):(h=typeof globalThis<"u"?globalThis:h||self,x(h.LogiksDashboard={},h.React,h.LogiksChart,h.lucideReact))})(this,(function(h,x,Q,q){"use strict";var k={exports:{}},R={};/**
+(function(h,x){typeof exports=="object"&&typeof module<"u"?x(exports,require("react"),require("logiks-chart"),require("lucide-react")):typeof define=="function"&&define.amd?define(["exports","react","logiks-chart","lucide-react"],x):(h=typeof globalThis<"u"?globalThis:h||self,x(h.LogiksDashboard={},h.React,h.LogiksChart,h.LucideReact))})(this,(function(h,x,Q,q){"use strict";var k={exports:{}},R={};/**
  * @license React
  * react-jsx-runtime.production.js
  *
