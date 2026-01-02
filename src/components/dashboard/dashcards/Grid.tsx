@@ -93,7 +93,7 @@ export default function GridCard({ cardConfig, methods = {}, sqlOpsUrls }: CardR
 
   return (
     <div className="w-full overflow-auto rounded-lg ">
-      <table className="w-full text-sm border">
+      <table className="w-full text-sm ">
         <thead className="bg-neutral-100 ">
           <tr>
             {keys.map(k => (
@@ -107,7 +107,7 @@ export default function GridCard({ cardConfig, methods = {}, sqlOpsUrls }: CardR
           {data.map((row: any, i: number) => (
             <tr key={i} className="odd:bg-white even:bg-neutral-50">
               {keys.map(col => (
-                <td key={col} className="p-3 border-b ">
+                <td key={col} className="p-3  ">
                   {row[col]}
                 </td>
               ))}

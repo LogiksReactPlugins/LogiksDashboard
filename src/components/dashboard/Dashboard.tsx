@@ -4,7 +4,7 @@ import { Settings } from "lucide-react";
 export default function Dashboard({ dashboardJson, methods }: DashboardProps) {
 
   return (
-    <div className="p-5 space-y-6">
+    <div className="px-4 py-2 space-y-1">
 
       {/* Dashboard Header */}
       <div className="flex items-center justify-between">
@@ -25,7 +25,7 @@ export default function Dashboard({ dashboardJson, methods }: DashboardProps) {
 
       {/* Cards Grid */}
 
-      <div className="grid grid-cols-12 gap-5 auto-rows-min">
+      <div className="grid grid-cols-12 gap-1 auto-rows-min">
         {Object.values(dashboardJson.cards).map((card, i) => (
           <Card key={i} config={card} methods={methods || {}} sqlOpsUrls={dashboardJson.endPoints} />
         ))}

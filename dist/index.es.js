@@ -16,19 +16,19 @@ function se() {
   if (z) return E;
   z = 1;
   var r = Symbol.for("react.transitional.element"), o = Symbol.for("react.fragment");
-  function n(a, l, b) {
+  function n(a, c, h) {
     var y = null;
-    if (b !== void 0 && (y = "" + b), l.key !== void 0 && (y = "" + l.key), "key" in l) {
-      b = {};
-      for (var c in l)
-        c !== "key" && (b[c] = l[c]);
-    } else b = l;
-    return l = b.ref, {
+    if (h !== void 0 && (y = "" + h), c.key !== void 0 && (y = "" + c.key), "key" in c) {
+      h = {};
+      for (var l in c)
+        l !== "key" && (h[l] = c[l]);
+    } else h = c;
+    return c = h.ref, {
       $$typeof: r,
       type: a,
       key: y,
-      ref: l !== void 0 ? l : null,
-      props: b
+      ref: c !== void 0 ? c : null,
+      props: h
     };
   }
   return E.Fragment = o, E.jsx = n, E.jsxs = n, E;
@@ -120,11 +120,11 @@ function ie() {
         return "<...>";
       }
     }
-    function l() {
+    function c() {
       var e = w.A;
       return e === null ? null : e.getOwner();
     }
-    function b() {
+    function h() {
       return Error("react-stack-top-frame");
     }
     function y(e) {
@@ -134,7 +134,7 @@ function ie() {
       }
       return e.key !== void 0;
     }
-    function c(e, t) {
+    function l(e, t) {
       function i() {
         Y || (Y = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
@@ -146,7 +146,7 @@ function ie() {
         configurable: !0
       });
     }
-    function h() {
+    function b() {
       var e = r(this.type);
       return $[e] || ($[e] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
@@ -161,7 +161,7 @@ function ie() {
         _owner: x
       }, (i !== void 0 ? i : null) !== null ? Object.defineProperty(e, "ref", {
         enumerable: !1,
-        get: h
+        get: b
       }) : Object.defineProperty(e, "ref", { enumerable: !1, value: null }), e._store = {}, Object.defineProperty(e._store, "validated", {
         configurable: !1,
         enumerable: !1,
@@ -220,7 +220,7 @@ React keys must be passed directly to JSX without using spread:
         for (var A in t)
           A !== "key" && (i[A] = t[A]);
       } else i = t;
-      return f && c(
+      return f && l(
         i,
         typeof e == "function" ? e.displayName || e.name || "Unknown" : e
       ), u(
@@ -228,7 +228,7 @@ React keys must be passed directly to JSX without using spread:
         f,
         p,
         x,
-        l(),
+        c(),
         i,
         N,
         S
@@ -247,8 +247,8 @@ React keys must be passed directly to JSX without using spread:
     };
     var Y, $ = {}, I = v.react_stack_bottom_frame.bind(
       v,
-      b
-    )(), L = k(a(b)), D = {};
+      h
+    )(), L = k(a(h)), D = {};
     R.Fragment = _, R.jsx = function(e, t, i, d, x) {
       var p = 1e4 > w.recentlyCreatedOwnerStacks++;
       return m(
@@ -277,11 +277,11 @@ React keys must be passed directly to JSX without using spread:
   })()), R;
 }
 var J;
-function le() {
+function ce() {
   return J || (J = 1, process.env.NODE_ENV === "production" ? T.exports = se() : T.exports = ie()), T.exports;
 }
-var s = le();
-const ce = {
+var s = ce();
+const le = {
   12: "lg:col-span-12",
   11: "lg:col-span-11",
   10: "lg:col-span-10",
@@ -322,15 +322,15 @@ function fe(r) {
   return Array.isArray(r) && r.length > 0 ? r : typeof r == "object" && r !== null ? [r] : [];
 }
 function me({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) {
-  const { source: a } = r, [l, b] = W(0);
+  const { source: a } = r, [c, h] = W(0);
   return G(() => {
     (async () => {
-      let c = {};
+      let l = {};
       if (console.log("source type"), a?.type === "method") {
         const u = o[a.method];
-        c = u ? await Promise.resolve(u()) : {};
+        l = u ? await Promise.resolve(u()) : {};
       } else if (a?.type === "api" && a.url)
-        c = await fetch(a.url, {
+        l = await fetch(a.url, {
           method: a.method || "GET",
           headers: a.headers || {}
         }).then((u) => u.json());
@@ -365,31 +365,27 @@ function me({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) {
               filter: {}
             })
           }).then((g) => g.json());
-          c = m?.data?.data ?? m?.data ?? {};
+          l = m?.data?.data ?? m?.data ?? {};
         } catch (u) {
           console.error("API fetch failed:", u);
         }
       }
-      console.log("CardRenderer result", c);
-      const h = de(c);
-      b(h);
+      console.log("CardRenderer result", l);
+      const b = de(l);
+      h(b);
     })();
-  }, [JSON.stringify(a)]), /* @__PURE__ */ s.jsx("div", { className: `
-      flex flex-col justify-center items-start gap-2 
-
-    
-    `, children: /* @__PURE__ */ s.jsx("span", { className: "text-3xl font-bold tracking-tight", children: l?.value ?? "--" }) });
+  }, [JSON.stringify(a)]), /* @__PURE__ */ s.jsx("div", { className: "flex flex-col justify-center", children: /* @__PURE__ */ s.jsx("span", { className: "text-3xl text-center tracking-tight", children: c?.value ?? "--" }) });
 }
-function be({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) {
-  const { source: a } = r, [l, b] = W(0);
+function he({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) {
+  const { source: a } = r, [c, h] = W(0);
   if (G(() => {
     (async () => {
-      let h = {};
+      let b = {};
       if (a?.type === "method") {
         const m = o[a.method];
-        h = m ? await Promise.resolve(m()) : {};
+        b = m ? await Promise.resolve(m()) : {};
       } else if (a?.type === "api" && a.url)
-        h = await fetch(a.url, {
+        b = await fetch(a.url, {
           method: a.method || "GET",
           headers: a.headers || {}
         }).then((m) => m.json());
@@ -424,30 +420,30 @@ function be({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) {
               filter: {}
             })
           }).then((v) => v.json());
-          h = g?.data?.data ?? g?.data ?? [];
+          b = g?.data?.data ?? g?.data ?? [];
         } catch (m) {
           console.error("API fetch failed:", m);
         }
       }
-      const u = fe(h);
-      b(u);
+      const u = fe(b);
+      h(u);
     })();
-  }, [JSON.stringify(a)]), !Array.isArray(l))
-    return console.warn("GridCard expected array but got:", l), /* @__PURE__ */ s.jsx("div", { children: "No table data" });
-  if (!l.length) return /* @__PURE__ */ s.jsx("div", { children: "No records found" });
-  const y = Object.keys(l[0] || {});
-  return /* @__PURE__ */ s.jsx("div", { className: "w-full overflow-auto rounded-lg ", children: /* @__PURE__ */ s.jsxs("table", { className: "w-full text-sm border", children: [
-    /* @__PURE__ */ s.jsx("thead", { className: "bg-neutral-100 ", children: /* @__PURE__ */ s.jsx("tr", { children: y.map((c) => /* @__PURE__ */ s.jsx("th", { className: "p-3 text-left font-semibold capitalize", children: c.replace(/_/g, " ") }, c)) }) }),
-    /* @__PURE__ */ s.jsx("tbody", { children: l.map((c, h) => /* @__PURE__ */ s.jsx("tr", { className: "odd:bg-white even:bg-neutral-50", children: y.map((u) => /* @__PURE__ */ s.jsx("td", { className: "p-3 border-b ", children: c[u] }, u)) }, h)) })
+  }, [JSON.stringify(a)]), !Array.isArray(c))
+    return console.warn("GridCard expected array but got:", c), /* @__PURE__ */ s.jsx("div", { children: "No table data" });
+  if (!c.length) return /* @__PURE__ */ s.jsx("div", { children: "No records found" });
+  const y = Object.keys(c[0] || {});
+  return /* @__PURE__ */ s.jsx("div", { className: "w-full overflow-auto rounded-lg ", children: /* @__PURE__ */ s.jsxs("table", { className: "w-full text-sm ", children: [
+    /* @__PURE__ */ s.jsx("thead", { className: "bg-neutral-100 ", children: /* @__PURE__ */ s.jsx("tr", { children: y.map((l) => /* @__PURE__ */ s.jsx("th", { className: "p-3 text-left font-semibold capitalize", children: l.replace(/_/g, " ") }, l)) }) }),
+    /* @__PURE__ */ s.jsx("tbody", { children: c.map((l, b) => /* @__PURE__ */ s.jsx("tr", { className: "odd:bg-white even:bg-neutral-50", children: y.map((u) => /* @__PURE__ */ s.jsx("td", { className: "p-3  ", children: l[u] }, u)) }, b)) })
   ] }) });
 }
-const he = ({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) => {
+const be = ({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) => {
   if (!r?.config?.type) return null;
   switch (r?.config.type) {
     case "number":
       return /* @__PURE__ */ s.jsx(me, { cardConfig: r, methods: o, sqlOpsUrls: n });
     case "grid":
-      return /* @__PURE__ */ s.jsx(be, { cardConfig: r, methods: o, sqlOpsUrls: n });
+      return /* @__PURE__ */ s.jsx(he, { cardConfig: r, methods: o, sqlOpsUrls: n });
     default:
       return /* @__PURE__ */ s.jsx(ae, { config: r, methods: o, sqlOpsConfig: n });
   }
@@ -457,20 +453,20 @@ function pe({ config: r, methods: o, sqlOpsUrls: n }) {
   return /* @__PURE__ */ s.jsxs(
     "div",
     {
-      className: `col-span-12 md:col-span-6 ${ce[ue(Number(a))] || "lg:col-span-4"}
+      className: `col-span-12 md:col-span-6 ${le[ue(Number(a))] || "lg:col-span-4"}
         bg-white  border border-neutral-200 
-        rounded-xl shadow-sm hover:shadow-md transition-all duration-300
+        rounded-md shadow-sm hover:shadow-md transition-all duration-300
          flex flex-col   h-max
   `,
       children: [
-        /* @__PURE__ */ s.jsx("div", { className: " px-4 py-2 flex items-center justify-between border-b border-neutral-200 ", children: /* @__PURE__ */ s.jsx("h2", { className: "text-base font-semibold text-neutral-700 ", children: r.title }) }),
-        /* @__PURE__ */ s.jsx("div", { className: " p-4 flex-1 ", children: /* @__PURE__ */ s.jsx(he, { cardConfig: r, methods: o ?? {}, sqlOpsUrls: n }) })
+        /* @__PURE__ */ s.jsx("div", { className: " p-1 flex items-center justify-between border-neutral-200 ", children: /* @__PURE__ */ s.jsx("h2", { className: "text-base  text-neutral-700 text-xs ", children: r.title }) }),
+        /* @__PURE__ */ s.jsx("div", { className: " p-1 flex-1 ", children: /* @__PURE__ */ s.jsx(be, { cardConfig: r, methods: o ?? {}, sqlOpsUrls: n }) })
       ]
     }
   );
 }
 function xe({ dashboardJson: r, methods: o }) {
-  return /* @__PURE__ */ s.jsxs("div", { className: "p-5 space-y-6", children: [
+  return /* @__PURE__ */ s.jsxs("div", { className: "px-4 py-2 space-y-1", children: [
     /* @__PURE__ */ s.jsxs("div", { className: "flex items-center justify-between", children: [
       /* @__PURE__ */ s.jsx("h1", { className: "text-2xl font-bold tracking-tight text-neutral-800", children: r.title }),
       /* @__PURE__ */ s.jsx(
@@ -486,7 +482,7 @@ function xe({ dashboardJson: r, methods: o }) {
         }
       )
     ] }),
-    /* @__PURE__ */ s.jsx("div", { className: "grid grid-cols-12 gap-5 auto-rows-min", children: Object.values(r.cards).map((n, a) => /* @__PURE__ */ s.jsx(pe, { config: n, methods: o || {}, sqlOpsUrls: r.endPoints }, a)) })
+    /* @__PURE__ */ s.jsx("div", { className: "grid grid-cols-12 gap-1 auto-rows-min", children: Object.values(r.cards).map((n, a) => /* @__PURE__ */ s.jsx(pe, { config: n, methods: o || {}, sqlOpsUrls: r.endPoints }, a)) })
   ] });
 }
 export {

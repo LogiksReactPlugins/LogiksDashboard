@@ -91,15 +91,11 @@ export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls }: Car
 
   return (
 
-    <div className="
-      flex flex-col justify-center items-start gap-2 
-
-    
-    ">
+    <div className="flex flex-col justify-center">
       {/* <span className="text-xs uppercase opacity-80">
         {config.title}
       </span> */}
-      <span className="text-3xl font-bold tracking-tight">
+      <span className="text-3xl text-center tracking-tight">
         {data?.value ?? "--"}
       </span>
     </div>

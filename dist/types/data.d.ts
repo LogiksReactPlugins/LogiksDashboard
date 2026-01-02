@@ -101,46 +101,6 @@ export declare const exapmle1: {
                 method: string;
             };
         };
-        card0: {
-            title: string;
-            width: number;
-            config: {
-                type: string;
-                subType: string;
-                options: {
-                    title: {
-                        text: string;
-                    };
-                    tooltip: {
-                        trigger: string;
-                    };
-                    xAxis: {
-                        type: string;
-                    };
-                    yAxis: {
-                        type: string;
-                    };
-                    series: {
-                        type: string;
-                        name: string;
-                        smooth: boolean;
-                    }[];
-                };
-            };
-            source: {
-                type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "leads_tbl.blocked": string;
-                    "leads_tbl.guid='{$_SESSION['SESS_GUID']}'": string;
-                    "lead_date >='{$startDate}'": string;
-                    "lead_date <='{$endDate}'": string;
-                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
-                };
-                groupby: string;
-            };
-        };
         card7: {
             title: string;
             width: number;
@@ -169,16 +129,30 @@ export declare const exapmle1: {
             };
             source: {
                 type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "leads_tbl.blocked": string;
-                    "leads_tbl.guid='{$_SESSION['SESS_GUID']}'": string;
-                    "lead_date >='{$startDate}'": string;
-                    "lead_date <='{$endDate}'": string;
-                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                method: string;
+            };
+        };
+        card5: {
+            title: string;
+            width: number;
+            config: {
+                type: string;
+                subType: string;
+                options: {
+                    tooltip: {
+                        trigger: string;
+                    };
+                    legend: {
+                        bottom: number;
+                    };
+                    series: {
+                        radius: string;
+                    }[];
                 };
-                groupby: string;
+            };
+            source: {
+                type: string;
+                method: string;
             };
         };
         card6: {
@@ -204,14 +178,7 @@ export declare const exapmle1: {
             };
             source: {
                 type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "leads_tbl.blocked": string;
-                    "leads_tbl.guid": string;
-                    "YEAR(leads_tbl.lead_date)='{$year}' AND (leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.closed_by='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
-                };
-                groupby: string;
+                method: string;
             };
         };
         card8: {
@@ -242,47 +209,7 @@ export declare const exapmle1: {
             };
             source: {
                 type: string;
-                table: string;
-                cols: string;
-                where: never[];
-                join: {
-                    query: string;
-                    condition: string;
-                    as: string;
-                    type: string;
-                }[];
-                groupby: string;
-                orderby: string;
-            };
-        };
-        card5: {
-            title: string;
-            width: number;
-            config: {
-                type: string;
-                subType: string;
-                options: {
-                    tooltip: {
-                        trigger: string;
-                    };
-                    legend: {
-                        bottom: number;
-                    };
-                    series: {
-                        radius: string;
-                    }[];
-                };
-            };
-            source: {
-                type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "leads_tbl.blocked": string;
-                    "leads_tbl.guid": string;
-                    "YEAR(leads_tbl.lead_date)='{$year}' AND (leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.closed_by='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
-                };
-                groupby: string;
+                method: string;
             };
         };
         card04: {
@@ -296,7 +223,7 @@ export declare const exapmle1: {
                         trigger: string;
                     };
                     legend: {
-                        bottom: number;
+                        top: number;
                     };
                     series: {
                         radius: string;
@@ -305,32 +232,7 @@ export declare const exapmle1: {
             };
             source: {
                 type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "leads_tbl.blocked": string;
-                    "YEAR(leads_tbl.lead_date)='{$year}' AND leads_tbl.lead_status in ('order','lost') AND (leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.closed_by='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
-                };
-                groupby: string;
-            };
-            width: number;
-        };
-        card13: {
-            title: string;
-            config: {
-                type: string;
-            };
-            source: {
-                type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "leads_tbl.blocked": string;
-                    "leads_tbl.guid": string;
-                    "leads_tbl.lead_status != 'junk'": string;
-                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
-                };
-                groupby: string;
+                method: string;
             };
             width: number;
         };
@@ -341,58 +243,7 @@ export declare const exapmle1: {
             };
             source: {
                 type: string;
-                table: string;
-                cols: string;
-                where: never[];
-                join: {
-                    query: string;
-                    condition: string;
-                    as: string;
-                    type: string;
-                }[];
-                groupby: string;
-                orderby: string;
-                limit: number;
-            };
-            width: number;
-        };
-        card06: {
-            title: string;
-            config: {
-                type: string;
-            };
-            source: {
-                type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "leads_tbl.blocked": string;
-                    "leads_tbl.guid": string;
-                    "YEAR(leads_tbl.lead_date) IN (YEAR(NOW()),YEAR(NOW()) - 1,YEAR(NOW()) - 2)": string;
-                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
-                };
-                groupby: string;
-                orderby: string;
-            };
-            width: number;
-        };
-        card07: {
-            title: string;
-            config: {
-                type: string;
-                stacked: boolean;
-            };
-            source: {
-                type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "leads_tbl.blocked": string;
-                    "leads_tbl.lead_status in ('order','lost') AND YEAR(leads_tbl.lead_date) IN (YEAR(NOW()),YEAR(NOW()) - 1,YEAR(NOW())-2)": string;
-                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
-                };
-                groupby: string;
-                orderby: string;
+                method: string;
             };
             width: number;
         };
@@ -400,19 +251,55 @@ export declare const exapmle1: {
             title: string;
             config: {
                 type: string;
-                stacked: boolean;
             };
             source: {
                 type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "leads_tbl.guid": string;
-                    "leads_tbl.blocked='false' AND YEAR(leads_tbl.lead_date) IN (YEAR(NOW()),YEAR(NOW()) - 1,YEAR(NOW()) - 2)": string;
-                    "(leads_tbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.open_by='{$_SESSION['SESS_USER_ID']}' OR leads_tbl.manager = '{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
+                method: string;
+            };
+            width: number;
+        };
+        card13: {
+            title: string;
+            config: {
+                type: string;
+                subType: string;
+                options: {
+                    tooltip: {
+                        trigger: string;
+                    };
+                    legend: {
+                        bottom: number;
+                    };
+                    series: {
+                        name: string;
+                        type: string;
+                        radius: string[];
+                        avoidLabelOverlap: boolean;
+                        itemStyle: {
+                            borderRadius: number;
+                            borderColor: string;
+                            borderWidth: number;
+                        };
+                        label: {
+                            show: boolean;
+                            position: string;
+                        };
+                        emphasis: {
+                            label: {
+                                show: boolean;
+                                fontSize: number;
+                                fontWeight: string;
+                            };
+                        };
+                        labelLine: {
+                            show: boolean;
+                        };
+                    };
                 };
-                groupby: string;
-                orderby: string;
+            };
+            source: {
+                type: string;
+                method: string;
             };
             width: number;
         };
@@ -421,19 +308,10 @@ export declare const exapmle1: {
             title: string;
             config: {
                 type: string;
-                stacked: boolean;
             };
             source: {
                 type: string;
-                table: string;
-                cols: string;
-                where: {
-                    "profiletbl.blocked": string;
-                    "leads_tbl.guid": string;
-                    "leads_tbl.customer_id = profiletbl.id AND leads_tbl.lead_status != 'junk' AND (profiletbl.assigned_to='{$_SESSION['SESS_USER_ID']}' OR {$_SESSION['SESS_PRIVILEGE_ID']} <= {$ADMIN_PRIVILEGE_RANGE})": string;
-                };
-                groupby: string;
-                orderby: string;
+                method: string;
             };
             width: number;
         };
