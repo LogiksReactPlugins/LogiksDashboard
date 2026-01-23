@@ -27,7 +27,7 @@ export default function Dashboard({ dashboardJson, methods }: DashboardProps) {
 
       <div className="grid grid-cols-12 gap-1 auto-rows-min">
         {Object.values(dashboardJson.cards).map((card, i) => (
-          <Card key={i} config={card} methods={methods || {}} sqlOpsUrls={dashboardJson.endPoints} />
+          <Card module_refid={dashboardJson?.module_refid} key={i} config={card} methods={methods || {}} sqlOpsUrls={dashboardJson.endPoints} />
         ))}
       </div>
     </div>

@@ -1,7 +1,7 @@
-import ne, { useState as W, useEffect as G } from "react";
-import ae from "logiks-chart";
-import { Settings as oe } from "lucide-react";
-var T = { exports: {} }, E = {};
+import ae, { useState as W, useEffect as G } from "react";
+import oe from "logiks-chart";
+import { Settings as se } from "lucide-react";
+var _ = { exports: {} }, E = {};
 /**
  * @license React
  * react-jsx-runtime.production.js
@@ -11,27 +11,27 @@ var T = { exports: {} }, E = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var z;
-function se() {
-  if (z) return E;
-  z = 1;
-  var r = Symbol.for("react.transitional.element"), o = Symbol.for("react.fragment");
-  function n(a, c, h) {
-    var y = null;
-    if (h !== void 0 && (y = "" + h), c.key !== void 0 && (y = "" + c.key), "key" in c) {
-      h = {};
-      for (var l in c)
-        l !== "key" && (h[l] = c[l]);
-    } else h = c;
-    return c = h.ref, {
+var q;
+function le() {
+  if (q) return E;
+  q = 1;
+  var r = Symbol.for("react.transitional.element"), a = Symbol.for("react.fragment");
+  function s(i, t, c) {
+    var b = null;
+    if (c !== void 0 && (b = "" + c), t.key !== void 0 && (b = "" + t.key), "key" in t) {
+      c = {};
+      for (var y in t)
+        y !== "key" && (c[y] = t[y]);
+    } else c = t;
+    return t = c.ref, {
       $$typeof: r,
-      type: a,
-      key: y,
-      ref: c !== void 0 ? c : null,
-      props: h
+      type: i,
+      key: b,
+      ref: t !== void 0 ? t : null,
+      props: c
     };
   }
-  return E.Fragment = o, E.jsx = n, E.jsxs = n, E;
+  return E.Fragment = a, E.jsx = s, E.jsxs = s, E;
 }
 var R = {};
 /**
@@ -43,26 +43,26 @@ var R = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var F;
+var z;
 function ie() {
-  return F || (F = 1, process.env.NODE_ENV !== "production" && (function() {
+  return z || (z = 1, process.env.NODE_ENV !== "production" && (function() {
     function r(e) {
       if (e == null) return null;
       if (typeof e == "function")
-        return e.$$typeof === ee ? null : e.displayName || e.name || null;
+        return e.$$typeof === re ? null : e.displayName || e.name || null;
       if (typeof e == "string") return e;
       switch (e) {
-        case _:
+        case w:
           return "Fragment";
-        case Q:
+        case V:
           return "Profiler";
-        case q:
+        case Q:
           return "StrictMode";
         case H:
           return "Suspense";
         case Z:
           return "SuspenseList";
-        case K:
+        case ee:
           return "Activity";
       }
       if (typeof e == "object")
@@ -71,97 +71,97 @@ function ie() {
         ), e.$$typeof) {
           case M:
             return "Portal";
-          case B:
-            return (e.displayName || "Context") + ".Provider";
-          case V:
-            return (e._context.displayName || "Context") + ".Consumer";
           case X:
-            var t = e.render;
-            return e = e.displayName, e || (e = t.displayName || t.name || "", e = e !== "" ? "ForwardRef(" + e + ")" : "ForwardRef"), e;
+            return (e.displayName || "Context") + ".Provider";
+          case B:
+            return (e._context.displayName || "Context") + ".Consumer";
           case U:
-            return t = e.displayName || null, t !== null ? t : r(e.type) || "Memo";
+            var n = e.render;
+            return e = e.displayName, e || (e = n.displayName || n.name || "", e = e !== "" ? "ForwardRef(" + e + ")" : "ForwardRef"), e;
+          case K:
+            return n = e.displayName || null, n !== null ? n : r(e.type) || "Memo";
           case O:
-            t = e._payload, e = e._init;
+            n = e._payload, e = e._init;
             try {
-              return r(e(t));
+              return r(e(n));
             } catch {
             }
         }
       return null;
     }
-    function o(e) {
+    function a(e) {
       return "" + e;
     }
-    function n(e) {
+    function s(e) {
       try {
-        o(e);
-        var t = !1;
+        a(e);
+        var n = !1;
       } catch {
-        t = !0;
+        n = !0;
       }
-      if (t) {
-        t = console;
-        var i = t.error, d = typeof Symbol == "function" && Symbol.toStringTag && e[Symbol.toStringTag] || e.constructor.name || "Object";
-        return i.call(
-          t,
+      if (n) {
+        n = console;
+        var l = n.error, f = typeof Symbol == "function" && Symbol.toStringTag && e[Symbol.toStringTag] || e.constructor.name || "Object";
+        return l.call(
+          n,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
-          d
-        ), o(e);
+          f
+        ), a(e);
       }
     }
-    function a(e) {
-      if (e === _) return "<>";
+    function i(e) {
+      if (e === w) return "<>";
       if (typeof e == "object" && e !== null && e.$$typeof === O)
         return "<...>";
       try {
-        var t = r(e);
-        return t ? "<" + t + ">" : "<...>";
+        var n = r(e);
+        return n ? "<" + n + ">" : "<...>";
       } catch {
         return "<...>";
       }
     }
-    function c() {
-      var e = w.A;
+    function t() {
+      var e = T.A;
       return e === null ? null : e.getOwner();
     }
-    function h() {
+    function c() {
       return Error("react-stack-top-frame");
     }
-    function y(e) {
+    function b(e) {
       if (C.call(e, "key")) {
-        var t = Object.getOwnPropertyDescriptor(e, "key").get;
-        if (t && t.isReactWarning) return !1;
+        var n = Object.getOwnPropertyDescriptor(e, "key").get;
+        if (n && n.isReactWarning) return !1;
       }
       return e.key !== void 0;
     }
-    function l(e, t) {
-      function i() {
-        Y || (Y = !0, console.error(
+    function y(e, n) {
+      function l() {
+        I || (I = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
-          t
+          n
         ));
       }
-      i.isReactWarning = !0, Object.defineProperty(e, "key", {
-        get: i,
+      l.isReactWarning = !0, Object.defineProperty(e, "key", {
+        get: l,
         configurable: !0
       });
     }
-    function b() {
+    function d() {
       var e = r(this.type);
-      return $[e] || ($[e] = !0, console.error(
+      return Y[e] || (Y[e] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), e = this.props.ref, e !== void 0 ? e : null;
     }
-    function u(e, t, i, d, x, p, N, S) {
-      return i = p.ref, e = {
+    function h(e, n, l, f, g, v, N, A) {
+      return l = v.ref, e = {
         $$typeof: P,
         type: e,
-        key: t,
-        props: p,
-        _owner: x
-      }, (i !== void 0 ? i : null) !== null ? Object.defineProperty(e, "ref", {
+        key: n,
+        props: v,
+        _owner: g
+      }, (l !== void 0 ? l : null) !== null ? Object.defineProperty(e, "ref", {
         enumerable: !1,
-        get: b
+        get: d
       }) : Object.defineProperty(e, "ref", { enumerable: !1, value: null }), e._store = {}, Object.defineProperty(e._store, "validated", {
         configurable: !1,
         enumerable: !1,
@@ -181,107 +181,107 @@ function ie() {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: S
+        value: A
       }), Object.freeze && (Object.freeze(e.props), Object.freeze(e)), e;
     }
-    function m(e, t, i, d, x, p, N, S) {
-      var f = t.children;
-      if (f !== void 0)
-        if (d)
-          if (re(f)) {
-            for (d = 0; d < f.length; d++)
-              g(f[d]);
-            Object.freeze && Object.freeze(f);
+    function u(e, n, l, f, g, v, N, A) {
+      var m = n.children;
+      if (m !== void 0)
+        if (f)
+          if (te(m)) {
+            for (f = 0; f < m.length; f++)
+              p(m[f]);
+            Object.freeze && Object.freeze(m);
           } else
             console.error(
               "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
             );
-        else g(f);
-      if (C.call(t, "key")) {
-        f = r(e);
-        var j = Object.keys(t).filter(function(te) {
-          return te !== "key";
+        else p(m);
+      if (C.call(n, "key")) {
+        m = r(e);
+        var j = Object.keys(n).filter(function(ne) {
+          return ne !== "key";
         });
-        d = 0 < j.length ? "{key: someKey, " + j.join(": ..., ") + ": ...}" : "{key: someKey}", D[f + d] || (j = 0 < j.length ? "{" + j.join(": ..., ") + ": ...}" : "{}", console.error(
+        f = 0 < j.length ? "{key: someKey, " + j.join(": ..., ") + ": ...}" : "{key: someKey}", L[m + f] || (j = 0 < j.length ? "{" + j.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
 React keys must be passed directly to JSX without using spread:
   let props = %s;
   <%s key={someKey} {...props} />`,
-          d,
           f,
+          m,
           j,
-          f
-        ), D[f + d] = !0);
+          m
+        ), L[m + f] = !0);
       }
-      if (f = null, i !== void 0 && (n(i), f = "" + i), y(t) && (n(t.key), f = "" + t.key), "key" in t) {
-        i = {};
-        for (var A in t)
-          A !== "key" && (i[A] = t[A]);
-      } else i = t;
-      return f && l(
-        i,
+      if (m = null, l !== void 0 && (s(l), m = "" + l), b(n) && (s(n.key), m = "" + n.key), "key" in n) {
+        l = {};
+        for (var S in n)
+          S !== "key" && (l[S] = n[S]);
+      } else l = n;
+      return m && y(
+        l,
         typeof e == "function" ? e.displayName || e.name || "Unknown" : e
-      ), u(
+      ), h(
         e,
-        f,
-        p,
-        x,
-        c(),
-        i,
+        m,
+        v,
+        g,
+        t(),
+        l,
         N,
-        S
+        A
       );
     }
-    function g(e) {
+    function p(e) {
       typeof e == "object" && e !== null && e.$$typeof === P && e._store && (e._store.validated = 1);
     }
-    var v = ne, P = Symbol.for("react.transitional.element"), M = Symbol.for("react.portal"), _ = Symbol.for("react.fragment"), q = Symbol.for("react.strict_mode"), Q = Symbol.for("react.profiler"), V = Symbol.for("react.consumer"), B = Symbol.for("react.context"), X = Symbol.for("react.forward_ref"), H = Symbol.for("react.suspense"), Z = Symbol.for("react.suspense_list"), U = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), K = Symbol.for("react.activity"), ee = Symbol.for("react.client.reference"), w = v.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, C = Object.prototype.hasOwnProperty, re = Array.isArray, k = console.createTask ? console.createTask : function() {
+    var x = ae, P = Symbol.for("react.transitional.element"), M = Symbol.for("react.portal"), w = Symbol.for("react.fragment"), Q = Symbol.for("react.strict_mode"), V = Symbol.for("react.profiler"), B = Symbol.for("react.consumer"), X = Symbol.for("react.context"), U = Symbol.for("react.forward_ref"), H = Symbol.for("react.suspense"), Z = Symbol.for("react.suspense_list"), K = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), ee = Symbol.for("react.activity"), re = Symbol.for("react.client.reference"), T = x.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, C = Object.prototype.hasOwnProperty, te = Array.isArray, k = console.createTask ? console.createTask : function() {
       return null;
     };
-    v = {
+    x = {
       react_stack_bottom_frame: function(e) {
         return e();
       }
     };
-    var Y, $ = {}, I = v.react_stack_bottom_frame.bind(
-      v,
-      h
-    )(), L = k(a(h)), D = {};
-    R.Fragment = _, R.jsx = function(e, t, i, d, x) {
-      var p = 1e4 > w.recentlyCreatedOwnerStacks++;
-      return m(
+    var I, Y = {}, D = x.react_stack_bottom_frame.bind(
+      x,
+      c
+    )(), $ = k(i(c)), L = {};
+    R.Fragment = w, R.jsx = function(e, n, l, f, g) {
+      var v = 1e4 > T.recentlyCreatedOwnerStacks++;
+      return u(
         e,
-        t,
-        i,
+        n,
+        l,
         !1,
-        d,
-        x,
-        p ? Error("react-stack-top-frame") : I,
-        p ? k(a(e)) : L
+        f,
+        g,
+        v ? Error("react-stack-top-frame") : D,
+        v ? k(i(e)) : $
       );
-    }, R.jsxs = function(e, t, i, d, x) {
-      var p = 1e4 > w.recentlyCreatedOwnerStacks++;
-      return m(
+    }, R.jsxs = function(e, n, l, f, g) {
+      var v = 1e4 > T.recentlyCreatedOwnerStacks++;
+      return u(
         e,
-        t,
-        i,
+        n,
+        l,
         !0,
-        d,
-        x,
-        p ? Error("react-stack-top-frame") : I,
-        p ? k(a(e)) : L
+        f,
+        g,
+        v ? Error("react-stack-top-frame") : D,
+        v ? k(i(e)) : $
       );
     };
   })()), R;
 }
-var J;
+var F;
 function ce() {
-  return J || (J = 1, process.env.NODE_ENV === "production" ? T.exports = se() : T.exports = ie()), T.exports;
+  return F || (F = 1, process.env.NODE_ENV === "production" ? _.exports = le() : _.exports = ie()), _.exports;
 }
-var s = ce();
-const le = {
+var o = ce();
+const ue = {
   12: "lg:col-span-12",
   11: "lg:col-span-11",
   10: "lg:col-span-10",
@@ -295,181 +295,180 @@ const le = {
   2: "lg:col-span-2",
   1: "lg:col-span-1"
 };
-function ue(r) {
+function de(r) {
   return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].includes(r) ? r : 6;
 }
-function de(r) {
+function fe(r) {
   if (typeof r == "number" || typeof r == "string")
     return { value: r };
   if (!r) return { value: "--" };
   if (Array.isArray(r) && r.length > 0) {
-    const o = r[0];
-    if (o.value !== void 0)
+    const a = r[0];
+    if (a.value !== void 0)
       return {
-        value: o.value,
-        label: o.title ?? o.name ?? void 0
+        value: a.value,
+        label: a.title ?? a.name ?? void 0
       };
-    const n = Object.keys(o).find((a) => typeof o[a] == "number");
-    if (n) return { value: o[n], label: o.category ?? o.title };
+    const s = Object.keys(a).find((i) => typeof a[i] == "number");
+    if (s) return { value: a[s], label: a.category ?? a.title };
   }
   if (typeof r == "object") {
-    const o = Object.keys(r).find((n) => typeof r[n] == "number");
-    if (o) return { value: r[o], label: r.label ?? r.title };
+    const a = Object.keys(r).find((s) => typeof r[s] == "number");
+    if (a) return { value: r[a], label: r.label ?? r.title };
   }
   return { value: "--" };
 }
-function fe(r) {
+function me(r) {
   return Array.isArray(r) && r.length > 0 ? r : typeof r == "object" && r !== null ? [r] : [];
 }
-function me({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) {
-  const { source: a } = r, [c, h] = W(0);
+async function J(r, a, s, i = void 0, t = void 0, c = {}) {
+  try {
+    let b = s;
+    return b || (b = (await fetch(r.baseURL + r.registerQuery, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${r?.accessToken}`
+      },
+      body: JSON.stringify({
+        query: a,
+        srcid: t
+      })
+    }).then((h) => h.json())).data.queryid), await fetch(r.baseURL + r.runQuery, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${r?.accessToken}`
+      },
+      body: JSON.stringify({
+        queryid: b,
+        filter: c,
+        refid: i,
+        page: 0,
+        limit: 1e4
+      })
+    }).then((d) => d.json());
+  } catch (b) {
+    throw b;
+  }
+}
+function be({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) {
+  const { source: t } = r, [c, b] = W(0);
   return G(() => {
     (async () => {
-      let l = {};
-      if (console.log("source type"), a?.type === "method") {
-        const u = o[a.method];
-        l = u ? await Promise.resolve(u()) : {};
-      } else if (a?.type === "api" && a.url)
-        l = await fetch(a.url, {
-          method: a.method || "GET",
-          headers: a.headers || {}
+      let d = {};
+      if (console.log("source type"), t?.type === "method") {
+        const u = a[t.method];
+        d = u ? await Promise.resolve(u()) : {};
+      } else if (t?.type === "api" && t.url)
+        d = await fetch(t.url, {
+          method: t.method || "GET",
+          headers: t.headers || {}
         }).then((u) => u.json());
-      else if (a?.type === "sql") {
-        if (!n) {
+      else if (t?.type === "sql") {
+        if (!s) {
           console.error("SQL source requires formJson.endPoints but it is missing");
           return;
         }
         try {
-          const u = await fetch(n.baseURL + n.registerQuery, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${n?.accessToken}`
-            },
-            body: JSON.stringify({
-              query: a
-            })
-          }).then((g) => g.json());
-          if (!u.queryid) {
-            console.log("queryid not generated");
-            return;
-          }
-          const m = await fetch(n.baseURL + n.runQuery, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${n?.accessToken}`
-            },
-            body: JSON.stringify({
-              queryid: u.queryid,
-              filter: {}
-            })
-          }).then((g) => g.json());
-          l = m?.data?.data ?? m?.data ?? {};
+          let u;
+          t.queryid || (u = {
+            table: t.table,
+            cols: t.columns ?? t.cols,
+            where: t.where ?? {},
+            orderby: t.orderby ?? "",
+            groupby: t.groupby ?? ""
+          });
+          const p = await J(s, u, t?.queryid, void 0, i);
+          d = p?.data?.data ?? p?.data ?? {};
         } catch (u) {
           console.error("API fetch failed:", u);
         }
       }
-      console.log("CardRenderer result", l);
-      const b = de(l);
-      h(b);
+      console.log("CardRenderer result", d);
+      const h = fe(d);
+      b(h);
     })();
-  }, [JSON.stringify(a)]), /* @__PURE__ */ s.jsx("div", { className: "flex flex-col justify-center", children: /* @__PURE__ */ s.jsx("span", { className: "text-3xl text-center tracking-tight", children: c?.value ?? "--" }) });
+  }, [JSON.stringify(t)]), /* @__PURE__ */ o.jsx("div", { className: "flex flex-col justify-center", children: /* @__PURE__ */ o.jsx("span", { className: "text-3xl text-center tracking-tight", children: c?.value ?? "--" }) });
 }
-function he({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) {
-  const { source: a } = r, [c, h] = W(0);
+function pe({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) {
+  const { source: t } = r, [c, b] = W(0);
   if (G(() => {
     (async () => {
-      let b = {};
-      if (a?.type === "method") {
-        const m = o[a.method];
-        b = m ? await Promise.resolve(m()) : {};
-      } else if (a?.type === "api" && a.url)
-        b = await fetch(a.url, {
-          method: a.method || "GET",
-          headers: a.headers || {}
-        }).then((m) => m.json());
-      else if (a?.type === "sql") {
-        if (!n) {
+      let h = {};
+      if (t?.type === "method") {
+        const p = a[t.method];
+        h = p ? await Promise.resolve(p()) : {};
+      } else if (t?.type === "api" && t.url)
+        h = await fetch(t.url, {
+          method: t.method || "GET",
+          headers: t.headers || {}
+        }).then((p) => p.json());
+      else if (t?.type === "sql") {
+        if (!s) {
           console.error("SQL source requires formJson.endPoints but it is missing");
           return;
         }
         try {
-          const m = await fetch(n.baseURL + n.registerQuery, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${n?.accessToken}`
-            },
-            body: JSON.stringify({
-              query: a
-            })
-          }).then((v) => v.json());
-          if (!m.queryid) {
-            console.log("queryid not generated");
-            return;
-          }
-          const g = await fetch(n.baseURL + n.runQuery, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${n?.accessToken}`
-            },
-            body: JSON.stringify({
-              queryid: m.queryid,
-              filter: {}
-            })
-          }).then((v) => v.json());
-          b = g?.data?.data ?? g?.data ?? [];
-        } catch (m) {
-          console.error("API fetch failed:", m);
+          let p;
+          t.queryid || (p = {
+            table: t.table,
+            cols: t.columns ?? t.cols,
+            where: t.where ?? {},
+            orderby: t.orderby ?? "",
+            groupby: t.groupby ?? ""
+          });
+          const x = await J(s, p, t?.queryid, void 0, i);
+          h = x?.data?.data ?? x?.data ?? [];
+        } catch (p) {
+          console.error("API fetch failed:", p);
         }
       }
-      const u = fe(b);
-      h(u);
+      const u = me(h);
+      b(u);
     })();
-  }, [JSON.stringify(a)]), !Array.isArray(c))
-    return console.warn("GridCard expected array but got:", c), /* @__PURE__ */ s.jsx("div", { children: "No table data" });
-  if (!c.length) return /* @__PURE__ */ s.jsx("div", { children: "No records found" });
+  }, [JSON.stringify(t)]), !Array.isArray(c))
+    return console.warn("GridCard expected array but got:", c), /* @__PURE__ */ o.jsx("div", { children: "No table data" });
+  if (!c.length) return /* @__PURE__ */ o.jsx("div", { children: "No records found" });
   const y = Object.keys(c[0] || {});
-  return /* @__PURE__ */ s.jsx("div", { className: "w-full overflow-auto rounded-lg ", children: /* @__PURE__ */ s.jsxs("table", { className: "w-full text-sm ", children: [
-    /* @__PURE__ */ s.jsx("thead", { className: "bg-neutral-100 ", children: /* @__PURE__ */ s.jsx("tr", { children: y.map((l) => /* @__PURE__ */ s.jsx("th", { className: "p-3 text-left font-semibold capitalize", children: l.replace(/_/g, " ") }, l)) }) }),
-    /* @__PURE__ */ s.jsx("tbody", { children: c.map((l, b) => /* @__PURE__ */ s.jsx("tr", { className: "odd:bg-white even:bg-neutral-50", children: y.map((u) => /* @__PURE__ */ s.jsx("td", { className: "p-3  ", children: l[u] }, u)) }, b)) })
+  return /* @__PURE__ */ o.jsx("div", { className: "w-full overflow-auto rounded-lg ", children: /* @__PURE__ */ o.jsxs("table", { className: "w-full text-sm ", children: [
+    /* @__PURE__ */ o.jsx("thead", { className: "bg-neutral-100 ", children: /* @__PURE__ */ o.jsx("tr", { children: y.map((d) => /* @__PURE__ */ o.jsx("th", { className: "p-3 text-left font-semibold capitalize", children: d.replace(/_/g, " ") }, d)) }) }),
+    /* @__PURE__ */ o.jsx("tbody", { children: c.map((d, h) => /* @__PURE__ */ o.jsx("tr", { className: "odd:bg-white even:bg-neutral-50", children: y.map((u) => /* @__PURE__ */ o.jsx("td", { className: "p-3  ", children: d[u] }, u)) }, h)) })
   ] }) });
 }
-const be = ({ cardConfig: r, methods: o = {}, sqlOpsUrls: n }) => {
+const he = ({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) => {
   if (!r?.config?.type) return null;
   switch (r?.config.type) {
     case "number":
-      return /* @__PURE__ */ s.jsx(me, { cardConfig: r, methods: o, sqlOpsUrls: n });
+      return /* @__PURE__ */ o.jsx(be, { module_refid: i, cardConfig: r, methods: a, sqlOpsUrls: s });
     case "grid":
-      return /* @__PURE__ */ s.jsx(he, { cardConfig: r, methods: o, sqlOpsUrls: n });
+      return /* @__PURE__ */ o.jsx(pe, { module_refid: i, cardConfig: r, methods: a, sqlOpsUrls: s });
     default:
-      return /* @__PURE__ */ s.jsx(ae, { config: r, methods: o, sqlOpsConfig: n });
+      return /* @__PURE__ */ o.jsx(oe, { module_refid: i, graph_config: r, methods: a, sqlOpsConfig: s });
   }
 };
-function pe({ config: r, methods: o, sqlOpsUrls: n }) {
-  const a = r.width ?? 6;
-  return /* @__PURE__ */ s.jsxs(
+function ye({ config: r, methods: a, sqlOpsUrls: s, module_refid: i }) {
+  const t = r.width ?? 6;
+  return /* @__PURE__ */ o.jsxs(
     "div",
     {
-      className: `col-span-12 md:col-span-6 ${le[ue(Number(a))] || "lg:col-span-4"}
+      className: `col-span-12 md:col-span-6 ${ue[de(Number(t))] || "lg:col-span-4"}
         bg-white  border border-neutral-200 
         rounded-md shadow-sm hover:shadow-md transition-all duration-300
          flex flex-col   h-max
   `,
       children: [
-        /* @__PURE__ */ s.jsx("div", { className: " p-1 flex items-center justify-between border-neutral-200 ", children: /* @__PURE__ */ s.jsx("h2", { className: "text-base  text-neutral-700 text-xs ", children: r.title }) }),
-        /* @__PURE__ */ s.jsx("div", { className: " p-1 flex-1 ", children: /* @__PURE__ */ s.jsx(be, { cardConfig: r, methods: o ?? {}, sqlOpsUrls: n }) })
+        /* @__PURE__ */ o.jsx("div", { className: " p-1 flex items-center justify-between border-neutral-200 ", children: /* @__PURE__ */ o.jsx("h2", { className: "text-base  text-neutral-700 text-xs ", children: r.title }) }),
+        /* @__PURE__ */ o.jsx("div", { className: " p-1 flex-1 ", children: /* @__PURE__ */ o.jsx(he, { module_refid: i, cardConfig: r, methods: a ?? {}, sqlOpsUrls: s }) })
       ]
     }
   );
 }
-function xe({ dashboardJson: r, methods: o }) {
-  return /* @__PURE__ */ s.jsxs("div", { className: "px-4 py-2 space-y-1", children: [
-    /* @__PURE__ */ s.jsxs("div", { className: "flex items-center justify-between", children: [
-      /* @__PURE__ */ s.jsx("h1", { className: "text-2xl font-bold tracking-tight text-neutral-800", children: r.title }),
-      /* @__PURE__ */ s.jsx(
+function je({ dashboardJson: r, methods: a }) {
+  return /* @__PURE__ */ o.jsxs("div", { className: "px-4 py-2 space-y-1", children: [
+    /* @__PURE__ */ o.jsxs("div", { className: "flex items-center justify-between", children: [
+      /* @__PURE__ */ o.jsx("h1", { className: "text-2xl font-bold tracking-tight text-neutral-800", children: r.title }),
+      /* @__PURE__ */ o.jsx(
         "button",
         {
           className: `
@@ -478,14 +477,14 @@ function xe({ dashboardJson: r, methods: o }) {
             transition-all duration-200
           `,
           onClick: () => console.log("Open Settings"),
-          children: /* @__PURE__ */ s.jsx(oe, { size: 20, className: "text-neutral-600 " })
+          children: /* @__PURE__ */ o.jsx(se, { size: 20, className: "text-neutral-600 " })
         }
       )
     ] }),
-    /* @__PURE__ */ s.jsx("div", { className: "grid grid-cols-12 gap-1 auto-rows-min", children: Object.values(r.cards).map((n, a) => /* @__PURE__ */ s.jsx(pe, { config: n, methods: o || {}, sqlOpsUrls: r.endPoints }, a)) })
+    /* @__PURE__ */ o.jsx("div", { className: "grid grid-cols-12 gap-1 auto-rows-min", children: Object.values(r.cards).map((s, i) => /* @__PURE__ */ o.jsx(ye, { module_refid: r?.module_refid, config: s, methods: a || {}, sqlOpsUrls: r.endPoints }, i)) })
   ] });
 }
 export {
-  xe as LogiksDashboard,
-  xe as default
+  je as LogiksDashboard,
+  je as default
 };

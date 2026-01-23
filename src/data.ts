@@ -51,7 +51,6 @@ export const exapmle1 = {
     },
     "cards": {
 
-
         "card1": {
             "title": "Total Won/Lost Ratio",
             "width": 3,
@@ -135,7 +134,7 @@ export const exapmle1 = {
         "card6": {
             "title": "Tasks By Status",
             "width": 6,
-          
+
             "config": {
                 "type": "bar",
                 "subType": "stacked",
@@ -195,14 +194,14 @@ export const exapmle1 = {
             },
             "width": 4
         },
-            "card09": {
+        "card09": {
             "title": "Lead Value in {$year}",
             "config": {
                 "type": "line"
             },
             "source": {
                 "type": "method",
-                 "method":"getTaskDataByStatus"
+                "method": "getTaskDataByStatus"
             },
             "width": 8
         },
@@ -211,12 +210,12 @@ export const exapmle1 = {
             "title": "Enquiry Type Wise Leads for 3 Years",
             "config": {
                 "type": "grid",
-                
+
             },
             "source": {
                 "type": "method",
                 "method": "getTaskDataByUser",
-             
+
             },
             "width": 12
         },
@@ -252,7 +251,7 @@ export const exapmle1 = {
                         labelLine: {
                             show: false
                         },
-                       
+
                     }
                 }
 
@@ -264,19 +263,19 @@ export const exapmle1 = {
             },
             "width": 8
         },
-    
+
 
         "card05": {
             "policy": "my_dashboard.lead.access",
             "title": "Client wise Leads Generated",
             "config": {
                 "type": "bar",
-                
+
             },
             "source": {
                 "type": "method",
-                "method":"getTaskDataByUser"
-               
+                "method": "getTaskDataByUser"
+
             },
             "width": 4
         }
@@ -286,6 +285,100 @@ export const exapmle1 = {
 }
 
 
-
-
-
+export const example2 ={
+     "endPoints": {
+        "baseURL": "http://192.168.0.20:9999",
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzIiwicGF5bG9hZCI6IlZ2OHdaNlY0ZnB1UzlGSjJQckNCdzNGRWZFbXF3UUN2MGQvb2tBNUM4cUZ1U3JyTHBTMzJmckQwd053bHVuZVpwdkwrS1J3NzlKNTBtNWdwbXhkS0FoUkl3a3ZwbThWNjZqblVMZzgxREdHN0ZJOVBXWGNDYnRjN2pmSzJxZ0ZNMlY5R2ZibnpCOUdUNlhnKzhBdk0rUWxyZUhEV0w1U3JFNGthRmMrdGg5b0dmVUQwU3BjSXltdnhKaTc4aXp1WEMvMmJXdmwwbGR1KzRIM2E0UVk3MzQzUC9hbGU1TU5JTXVSZldHQzA2czZqRlVHaHpmMytJdmJRbE9LK2xOb0VLdXQ4NWdpK2hEWTQ5Z1lyS2xZRmo4MDkwZnRxQmw5alp3WXAxQT09IiwiaWF0IjoxNzY5MTU4Mjc1LCJleHAiOjE3NjkxNjE4NzUsImp0aSI6ImFjYzoxOjE3NjkxNTgyNzUwMDk6d2ViIn0.9IpwKpMcWahVyOnZt47j2kjDnoVhcCLAcn5T3d5eoD8",
+        "dbopsGetHash": "/api/dbops",
+        "dbopsGetRefId": "/api/dbops/save",
+        "dbopsCreate": "/api/dbops/create",
+        "dbopsUpdate": "/api/dbops/update",
+        "dbopsFetch": "/api/dbops/fetch",
+        "registerQuery": "/api/query/save",
+        "runQuery": "/api/query/run"
+    },
+    "class_container": "container-fluid",
+    "title": "E-Office Dashboard",
+    "cards": {
+        "card1": {
+            "title": "Total Files Created",
+            "policy_1": "my_dashboard.lead.access",
+            "config": {
+                "type": "number"
+            },
+            "source": {
+                "type": "sql",
+                "queryid": "dashboards%40eofficeMapp.main%40cards.card1"
+            },
+            "width": 3,
+            "widget": "lead_status_wise_count"
+        },
+        "card2": {
+            "title": "Files Pending Approval",
+            "policy_1": "my_dashboard.lead.access",
+            "config": {
+                "type": "number"
+            },
+            "source": {
+                "type": "sql",
+                "queryid": "dashboards%40eofficeMapp.main%40cards.card2"
+            },
+            "width": 3,
+            "widget": "lead_status_wise_count"
+        },
+        "card3": {
+            "title": "Files Completed",
+            "policy_1": "my_dashboard.lead.access",
+            "config": {
+                "type": "number"
+            },
+            "source": {
+                "type": "sql",
+                "queryid": "dashboards%40eofficeMapp.main%40cards.card3"
+            },
+            "width": 3,
+            "widget": "lead_status_wise_count"
+        },
+        "card4": {
+            "title": "Files Archived",
+            "policy_1": "my_dashboard.lead.access",
+            "config": {
+                "type": "number"
+            },
+            "source": {
+                "type": "sql",
+                "queryid": "dashboards%40eofficeMapp.main%40cards.card4"
+            },
+            "width": 3,
+            "widget": "lead_status_wise_count"
+        },
+        "card5": {
+            "title": "Files Created",
+            "policy_1": "my_dashboard.lead.access",
+            "config": {
+                "type": "pie"
+            },
+            "source": {
+                "type": "sql",
+                "queryid": "dashboards%40eofficeMapp.main%40cards.card5"
+            },
+            "width": 4,
+            "widget": "lead_status_wise_count"
+        },
+        "card6": {
+            "title": "Files Created Per Day",
+            "policy_1": "my_dashboard.lead.access",
+            "config": {
+                "type": "line"
+            },
+            "source": {
+                "type": "sql",
+                "queryid": "dashboards%40eofficeMapp.main%40cards.card6"
+            },
+            "width": 8,
+            "widget": "lead_status_wise_count"
+        }
+    },
+    "module_refid": "eofficeMapp.main",
+    "module_type": "dashboards"
+} 

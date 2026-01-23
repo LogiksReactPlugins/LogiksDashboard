@@ -4,7 +4,7 @@ import CardRenderer from "./CardRenderer.js";
 
 
 
-export default function Card({ config, methods, sqlOpsUrls }: CardProps) {
+export default function Card({ config, methods, sqlOpsUrls, module_refid }: CardProps) {
     const w = config.width ?? 6;
 
     return (
@@ -22,7 +22,7 @@ export default function Card({ config, methods, sqlOpsUrls }: CardProps) {
             </div>
 
             <div className=" p-1 flex-1 " >
-                <CardRenderer cardConfig={config} methods={methods ?? {}} sqlOpsUrls={sqlOpsUrls} />
+                <CardRenderer module_refid={module_refid} cardConfig={config} methods={methods ?? {}} sqlOpsUrls={sqlOpsUrls} />
             </div>
         </div>
     );

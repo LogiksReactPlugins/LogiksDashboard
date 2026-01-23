@@ -1,7 +1,7 @@
 
 import LogiksDashboard from "./components/dashboard/index.js";
 
-import { exapmle1 } from "./data.js";
+import { example2 } from "./data.js";
 
 function App() {
     const getLineChartData = () => ([
@@ -19,11 +19,11 @@ function App() {
     ]);
 
     const getPendingTask = () => ([
-  { "category":"Closed", "value":261 },
-  { "category":"Open",   "value":120 },
-  { "category":"Pending","value":40 },
-  { "category":"Rejected","value":20 }
-]);
+        { "category": "Closed", "value": 261 },
+        { "category": "Open", "value": 120 },
+        { "category": "Pending", "value": 40 },
+        { "category": "Rejected", "value": 20 }
+    ]);
 
     const getWorkLoadTask = () => ({
         categories: ["Mon", "Tue", "Wed", "Thu", "Fri"],
@@ -51,7 +51,7 @@ function App() {
     return (
         <>
             <LogiksDashboard
-                dashboardJson={exapmle1}
+                dashboardJson={example2}
                 methods={{
                     getLineChartData, getTaskDataByStatus, getPendingTask, getWorkLoadTask,
                     getTotalRevenue, getTotalWonLostRatio, getTotalEnquiry, getTotalDeal,

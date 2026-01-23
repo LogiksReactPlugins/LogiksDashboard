@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { CardRendererProps } from "@/components/dashboard/Dashboard.types";
-import { normalizeNumber } from "../utils";
+import { CardRendererProps, sqlQueryProps } from "@/components/dashboard/Dashboard.types";
+import { fetchDataByquery, normalizeNumber } from "../utils";
 
 
 
-export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls }: CardRendererProps) {
+export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls,module_refid }: CardRendererProps) {
 
   const { source } = cardConfig;
-
 
   const [data, setData] = useState<any>(0);
 
@@ -34,42 +33,18 @@ export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls }: Car
         }
 
         try {
-
-          const resQueryId = await fetch(sqlOpsUrls.baseURL + sqlOpsUrls.registerQuery, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${sqlOpsUrls?.accessToken}`
-            },
-            body: JSON.stringify({
-              query: source
-            })
-          })
-            .then(res => res.json());
-
-
-          if (!resQueryId.queryid) {
-            console.log("queryid not generated");
-            return
-
+          let query: sqlQueryProps | undefined;
+          if (!source.queryid) {
+            query = {
+              table: source.table,
+              cols: source.columns ?? source.cols,
+              where: source.where ?? {},
+              orderby: source.orderby ?? "",
+              groupby: source.groupby ?? ""
+            };
           }
 
-          const res = await fetch(sqlOpsUrls.baseURL + sqlOpsUrls.runQuery, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${sqlOpsUrls?.accessToken}`
-            },
-            body: JSON.stringify({
-
-              "queryid": resQueryId.queryid,
-              "filter": {
-
-              }
-            })
-
-          }).then(res => res.json());
-
+          const res = await fetchDataByquery(sqlOpsUrls, query, source?.queryid, undefined, module_refid);
           result = res?.data?.data ?? res?.data ?? {}
 
         } catch (err) {
@@ -79,7 +54,7 @@ export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls }: Car
       }
       console.log("CardRenderer result", result)
 
-        const normalized = normalizeNumber(result);
+      const normalized = normalizeNumber(result);
       setData(normalized); // <-- only normalized data
     };
 

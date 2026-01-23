@@ -10,6 +10,7 @@ export interface DashboardJson {
     cards: Record<string, CardConfig>;
     filter?: Record<string, any>;
     endPoints?: sqlOpsUrls | undefined;
+    module_refid?: string;
 }
 
 export interface CardConfig {
@@ -24,14 +25,28 @@ export interface CardProps {
     config: CardConfig;
     methods?: Record<string, Function>;
     sqlOpsUrls?: sqlOpsUrls | undefined;
+    module_refid?: string | undefined;
 }
 
+export type ApiResponse<T = any> = {
+    success?: boolean;
+    message?: string;
+    data: T;
+};
 
+export interface sqlQueryProps {
+    table: string;
+    cols: string;
+    where?: Record<string, string>;
+    orderby?: string;
+    groupby?: string;
+};
 
 export interface CardRendererProps {
     cardConfig: CardConfig;
     methods?: Record<string, Function>;
     sqlOpsUrls?: sqlOpsUrls | undefined;
+    module_refid?: string | undefined
 }
 
 export interface DashboardProps {

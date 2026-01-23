@@ -317,4 +317,101 @@ export declare const exapmle1: {
         };
     };
 };
+export declare const example2: {
+    endPoints: {
+        baseURL: string;
+        accessToken: string;
+        dbopsGetHash: string;
+        dbopsGetRefId: string;
+        dbopsCreate: string;
+        dbopsUpdate: string;
+        dbopsFetch: string;
+        registerQuery: string;
+        runQuery: string;
+    };
+    class_container: string;
+    title: string;
+    cards: {
+        card1: {
+            title: string;
+            policy_1: string;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                queryid: string;
+            };
+            width: number;
+            widget: string;
+        };
+        card2: {
+            title: string;
+            policy_1: string;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                queryid: string;
+            };
+            width: number;
+            widget: string;
+        };
+        card3: {
+            title: string;
+            policy_1: string;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                queryid: string;
+            };
+            width: number;
+            widget: string;
+        };
+        card4: {
+            title: string;
+            policy_1: string;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                queryid: string;
+            };
+            width: number;
+            widget: string;
+        };
+        card5: {
+            title: string;
+            policy_1: string;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                queryid: string;
+            };
+            width: number;
+            widget: string;
+        };
+        card6: {
+            title: string;
+            policy_1: string;
+            config: {
+                type: string;
+            };
+            source: {
+                type: string;
+                queryid: string;
+            };
+            width: number;
+            widget: string;
+        };
+    };
+    module_refid: string;
+    module_type: string;
+};
 //# sourceMappingURL=data.d.ts.map
