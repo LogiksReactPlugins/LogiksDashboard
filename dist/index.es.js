@@ -16,19 +16,19 @@ function le() {
   if (q) return E;
   q = 1;
   var r = Symbol.for("react.transitional.element"), a = Symbol.for("react.fragment");
-  function s(i, t, c) {
+  function s(c, t, i) {
     var b = null;
-    if (c !== void 0 && (b = "" + c), t.key !== void 0 && (b = "" + t.key), "key" in t) {
-      c = {};
+    if (i !== void 0 && (b = "" + i), t.key !== void 0 && (b = "" + t.key), "key" in t) {
+      i = {};
       for (var y in t)
-        y !== "key" && (c[y] = t[y]);
-    } else c = t;
-    return t = c.ref, {
+        y !== "key" && (i[y] = t[y]);
+    } else i = t;
+    return t = i.ref, {
       $$typeof: r,
-      type: i,
+      type: c,
       key: b,
       ref: t !== void 0 ? t : null,
-      props: c
+      props: i
     };
   }
   return E.Fragment = a, E.jsx = s, E.jsxs = s, E;
@@ -109,7 +109,7 @@ function ie() {
         ), a(e);
       }
     }
-    function i(e) {
+    function c(e) {
       if (e === w) return "<>";
       if (typeof e == "object" && e !== null && e.$$typeof === O)
         return "<...>";
@@ -124,7 +124,7 @@ function ie() {
       var e = T.A;
       return e === null ? null : e.getOwner();
     }
-    function c() {
+    function i() {
       return Error("react-stack-top-frame");
     }
     function b(e) {
@@ -247,8 +247,8 @@ React keys must be passed directly to JSX without using spread:
     };
     var I, Y = {}, D = x.react_stack_bottom_frame.bind(
       x,
-      c
-    )(), $ = k(i(c)), L = {};
+      i
+    )(), $ = k(c(i)), L = {};
     R.Fragment = w, R.jsx = function(e, n, l, f, g) {
       var v = 1e4 > T.recentlyCreatedOwnerStacks++;
       return u(
@@ -259,7 +259,7 @@ React keys must be passed directly to JSX without using spread:
         f,
         g,
         v ? Error("react-stack-top-frame") : D,
-        v ? k(i(e)) : $
+        v ? k(c(e)) : $
       );
     }, R.jsxs = function(e, n, l, f, g) {
       var v = 1e4 > T.recentlyCreatedOwnerStacks++;
@@ -271,7 +271,7 @@ React keys must be passed directly to JSX without using spread:
         f,
         g,
         v ? Error("react-stack-top-frame") : D,
-        v ? k(i(e)) : $
+        v ? k(c(e)) : $
       );
     };
   })()), R;
@@ -309,7 +309,7 @@ function fe(r) {
         value: a.value,
         label: a.title ?? a.name ?? void 0
       };
-    const s = Object.keys(a).find((i) => typeof a[i] == "number");
+    const s = Object.keys(a).find((c) => typeof a[c] == "number");
     if (s) return { value: a[s], label: a.category ?? a.title };
   }
   if (typeof r == "object") {
@@ -321,7 +321,7 @@ function fe(r) {
 function me(r) {
   return Array.isArray(r) && r.length > 0 ? r : typeof r == "object" && r !== null ? [r] : [];
 }
-async function J(r, a, s, i = void 0, t = void 0, c = {}) {
+async function J(r, a, s, c = void 0, t = void 0, i = {}) {
   try {
     let b = s;
     return b || (b = (await fetch(r.baseURL + r.registerQuery, {
@@ -342,8 +342,8 @@ async function J(r, a, s, i = void 0, t = void 0, c = {}) {
       },
       body: JSON.stringify({
         queryid: b,
-        filter: c,
-        refid: i,
+        filter: i,
+        refid: c,
         page: 0,
         limit: 1e4
       })
@@ -352,8 +352,8 @@ async function J(r, a, s, i = void 0, t = void 0, c = {}) {
     throw b;
   }
 }
-function be({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) {
-  const { source: t } = r, [c, b] = W(0);
+function be({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) {
+  const { source: t } = r, [i, b] = W(0);
   return G(() => {
     (async () => {
       let d = {};
@@ -379,7 +379,7 @@ function be({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) 
             orderby: t.orderby ?? "",
             groupby: t.groupby ?? ""
           });
-          const p = await J(s, u, t?.queryid, void 0, i);
+          const p = await J(s, u, t?.queryid, void 0, c);
           d = p?.data?.data ?? p?.data ?? {};
         } catch (u) {
           console.error("API fetch failed:", u);
@@ -389,10 +389,10 @@ function be({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) 
       const h = fe(d);
       b(h);
     })();
-  }, [JSON.stringify(t)]), /* @__PURE__ */ o.jsx("div", { className: "flex flex-col justify-center", children: /* @__PURE__ */ o.jsx("span", { className: "text-3xl text-center tracking-tight", children: c?.value ?? "--" }) });
+  }, [JSON.stringify(t)]), /* @__PURE__ */ o.jsx("div", { className: "flex flex-col justify-center", children: /* @__PURE__ */ o.jsx("span", { className: "text-3xl text-center tracking-tight", children: i?.value ?? "--" }) });
 }
-function pe({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) {
-  const { source: t } = r, [c, b] = W(0);
+function pe({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) {
+  const { source: t } = r, [i, b] = W(0);
   if (G(() => {
     (async () => {
       let h = {};
@@ -418,7 +418,7 @@ function pe({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) 
             orderby: t.orderby ?? "",
             groupby: t.groupby ?? ""
           });
-          const x = await J(s, p, t?.queryid, void 0, i);
+          const x = await J(s, p, t?.queryid, void 0, c);
           h = x?.data?.data ?? x?.data ?? [];
         } catch (p) {
           console.error("API fetch failed:", p);
@@ -427,39 +427,43 @@ function pe({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) 
       const u = me(h);
       b(u);
     })();
-  }, [JSON.stringify(t)]), !Array.isArray(c))
-    return console.warn("GridCard expected array but got:", c), /* @__PURE__ */ o.jsx("div", { children: "No table data" });
-  if (!c.length) return /* @__PURE__ */ o.jsx("div", { children: "No records found" });
-  const y = Object.keys(c[0] || {});
+  }, [JSON.stringify(t)]), !Array.isArray(i))
+    return console.warn("GridCard expected array but got:", i), /* @__PURE__ */ o.jsx("div", { children: "No table data" });
+  if (!i.length) return /* @__PURE__ */ o.jsx("div", { children: "No records found" });
+  const y = Object.keys(i[0] || {});
   return /* @__PURE__ */ o.jsx("div", { className: "w-full overflow-auto rounded-lg ", children: /* @__PURE__ */ o.jsxs("table", { className: "w-full text-sm ", children: [
     /* @__PURE__ */ o.jsx("thead", { className: "bg-neutral-100 ", children: /* @__PURE__ */ o.jsx("tr", { children: y.map((d) => /* @__PURE__ */ o.jsx("th", { className: "p-3 text-left font-semibold capitalize", children: d.replace(/_/g, " ") }, d)) }) }),
-    /* @__PURE__ */ o.jsx("tbody", { children: c.map((d, h) => /* @__PURE__ */ o.jsx("tr", { className: "odd:bg-white even:bg-neutral-50", children: y.map((u) => /* @__PURE__ */ o.jsx("td", { className: "p-3  ", children: d[u] }, u)) }, h)) })
+    /* @__PURE__ */ o.jsx("tbody", { children: i.map((d, h) => /* @__PURE__ */ o.jsx("tr", { className: "odd:bg-white even:bg-neutral-50", children: y.map((u) => /* @__PURE__ */ o.jsx("td", { className: "p-3  ", children: d[u] }, u)) }, h)) })
   ] }) });
 }
-const he = ({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) => {
+const he = ({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) => {
   if (!r?.config?.type) return null;
   switch (r?.config.type) {
     case "number":
-      return /* @__PURE__ */ o.jsx(be, { module_refid: i, cardConfig: r, methods: a, sqlOpsUrls: s });
+      return /* @__PURE__ */ o.jsx(be, { module_refid: c, cardConfig: r, methods: a, sqlOpsUrls: s });
     case "grid":
-      return /* @__PURE__ */ o.jsx(pe, { module_refid: i, cardConfig: r, methods: a, sqlOpsUrls: s });
+      return /* @__PURE__ */ o.jsx(pe, { module_refid: c, cardConfig: r, methods: a, sqlOpsUrls: s });
     default:
-      return /* @__PURE__ */ o.jsx(oe, { module_refid: i, graph_config: r, methods: a, sqlOpsConfig: s });
+      return /* @__PURE__ */ o.jsx(oe, { module_refid: c, graph_config: r, methods: a, sqlOpsConfig: s });
   }
 };
-function ye({ config: r, methods: a, sqlOpsUrls: s, module_refid: i }) {
-  const t = r.width ?? 6;
+function ye({ config: r, methods: a, sqlOpsUrls: s, module_refid: c }) {
+  const t = r.width ?? 6, i = r?.config?.type === "number";
   return /* @__PURE__ */ o.jsxs(
     "div",
     {
-      className: `col-span-12 md:col-span-6 ${ue[de(Number(t))] || "lg:col-span-4"}
-        bg-white  border border-neutral-200 
-        rounded-md shadow-sm hover:shadow-md transition-all duration-300
-         flex flex-col   h-max
+      className: `
+    ${i ? "col-span-6" : "col-span-12"}
+    md:col-span-6
+    ${ue[de(Number(t))] || "lg:col-span-4"}
+    bg-white border border-neutral-200
+    rounded-md shadow-sm hover:shadow-md
+    transition-all duration-300
+    flex flex-col h-max
   `,
       children: [
         /* @__PURE__ */ o.jsx("div", { className: " p-1 flex items-center justify-between border-neutral-200 ", children: /* @__PURE__ */ o.jsx("h2", { className: "text-base  text-neutral-700 text-xs ", children: r.title }) }),
-        /* @__PURE__ */ o.jsx("div", { className: " p-1 flex-1 ", children: /* @__PURE__ */ o.jsx(he, { module_refid: i, cardConfig: r, methods: a ?? {}, sqlOpsUrls: s }) })
+        /* @__PURE__ */ o.jsx("div", { className: " p-1 flex-1 ", children: /* @__PURE__ */ o.jsx(he, { module_refid: c, cardConfig: r, methods: a ?? {}, sqlOpsUrls: s }) })
       ]
     }
   );
@@ -481,7 +485,7 @@ function je({ dashboardJson: r, methods: a }) {
         }
       )
     ] }),
-    /* @__PURE__ */ o.jsx("div", { className: "grid grid-cols-12 gap-1 auto-rows-min", children: Object.values(r.cards).map((s, i) => /* @__PURE__ */ o.jsx(ye, { module_refid: r?.module_refid, config: s, methods: a || {}, sqlOpsUrls: r.endPoints }, i)) })
+    /* @__PURE__ */ o.jsx("div", { className: "grid grid-cols-12 gap-1 auto-rows-min", children: Object.values(r.cards).map((s, c) => /* @__PURE__ */ o.jsx(ye, { module_refid: r?.module_refid, config: s, methods: a || {}, sqlOpsUrls: r.endPoints }, c)) })
   ] });
 }
 export {
