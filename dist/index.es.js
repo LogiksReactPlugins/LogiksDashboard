@@ -462,7 +462,7 @@ function ye({ config: r, methods: a, sqlOpsUrls: s, module_refid: c }) {
   `,
       children: [
         /* @__PURE__ */ o.jsx("div", { className: " p-1 flex items-center justify-between border-neutral-200 ", children: /* @__PURE__ */ o.jsx("h2", { className: "text-base  text-neutral-700 text-xs ", children: r.title }) }),
-        /* @__PURE__ */ o.jsx("div", { className: " p-1 flex-1 pb-5", children: /* @__PURE__ */ o.jsx(he, { module_refid: c, cardConfig: r, methods: a ?? {}, sqlOpsUrls: s }) })
+        /* @__PURE__ */ o.jsx("div", { className: "p-1 flex-1 mb-5", children: /* @__PURE__ */ o.jsx(he, { module_refid: c, cardConfig: r, methods: a ?? {}, sqlOpsUrls: s }) })
       ]
     }
   );

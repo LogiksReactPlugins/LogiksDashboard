@@ -27,7 +27,7 @@ React keys must be passed directly to JSX without using spread:
     rounded-md shadow-sm hover:shadow-md
     transition-all duration-300
     flex flex-col h-max
-  `,children:[o.jsx("div",{className:" p-1 flex items-center justify-between border-neutral-200 ",children:o.jsx("h2",{className:"text-base  text-neutral-700 text-xs ",children:r.title})}),o.jsx("div",{className:" p-1 flex-1 pb-5",children:o.jsx(ne,{module_refid:l,cardConfig:r,methods:a??{},sqlOpsUrls:s})})]})}function L({dashboardJson:r,methods:a}){return o.jsxs("div",{className:"px-4 py-2 space-y-1",children:[o.jsxs("div",{className:"flex items-center justify-between",children:[o.jsx("h1",{className:"text-2xl font-bold tracking-tight text-neutral-800",children:r.title}),o.jsx("button",{className:`
+  `,children:[o.jsx("div",{className:" p-1 flex items-center justify-between border-neutral-200 ",children:o.jsx("h2",{className:"text-base  text-neutral-700 text-xs ",children:r.title})}),o.jsx("div",{className:"p-1 flex-1 mb-5",children:o.jsx(ne,{module_refid:l,cardConfig:r,methods:a??{},sqlOpsUrls:s})})]})}function L({dashboardJson:r,methods:a}){return o.jsxs("div",{className:"px-4 py-2 space-y-1",children:[o.jsxs("div",{className:"flex items-center justify-between",children:[o.jsx("h1",{className:"text-2xl font-bold tracking-tight text-neutral-800",children:r.title}),o.jsx("button",{className:`
             p-2 rounded-lg border border-neutral-200 
             hover:bg-neutral-100 
             transition-all duration-200
