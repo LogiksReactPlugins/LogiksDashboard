@@ -13,7 +13,7 @@ export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls,module
   useEffect(() => {
     const load = async () => {
       let result = {};
-      console.log("source type");
+     
 
       if (source?.type === "method") {
         const fn = methods[source.method as keyof typeof methods];
@@ -52,7 +52,7 @@ export default function NumberCard({ cardConfig, methods = {}, sqlOpsUrls,module
         }
 
       }
-      console.log("CardRenderer result", result)
+ 
 
       const normalized = normalizeNumber(result);
       setData(normalized); // <-- only normalized data
