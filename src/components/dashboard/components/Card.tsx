@@ -25,7 +25,7 @@ export default function Card({ config, methods, sqlOpsUrls, module_refid }: Card
                 </h2>
             </div>
 
-            <div className=" p-1 flex-1 " >
+            <div className=" p-1 flex-1 pb-5" >
                 <CardRenderer module_refid={module_refid} cardConfig={config} methods={methods ?? {}} sqlOpsUrls={sqlOpsUrls} />
             </div>
         </div>
