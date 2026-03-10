@@ -4,18 +4,20 @@ import CardRenderer from "./CardRenderer.js";
 
 
 
-export default function Card({ config, methods, sqlOpsUrls, module_refid }: CardProps) {
+export default function Card({ config, methods, sqlOpsUrls, module_refid, onClick }: CardProps) {
     const w = config.width ?? 6;
     const isNumber = config?.config?.type === "number";
     return (
-        <div className={`
+        <div
+            onClick={onClick}
+            className={`
     ${isNumber ? "col-span-6" : "col-span-12"}
     md:col-span-6
     ${tailwindCols[toColWidth(Number(w))] || "lg:col-span-4"}
     bg-white border border-neutral-200
     rounded-md shadow-sm hover:shadow-md
     transition-all duration-300
-    flex flex-col h-max
+    flex flex-col h-max cursor-pointer
   `}
         >
             <div className=" p-1 flex items-center justify-between border-neutral-200 ">
