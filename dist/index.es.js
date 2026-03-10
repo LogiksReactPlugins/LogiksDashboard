@@ -16,19 +16,19 @@ function ie() {
   if (q) return E;
   q = 1;
   var r = Symbol.for("react.transitional.element"), a = Symbol.for("react.fragment");
-  function s(c, t, l) {
+  function s(i, t, c) {
     var m = null;
-    if (l !== void 0 && (m = "" + l), t.key !== void 0 && (m = "" + t.key), "key" in t) {
-      l = {};
+    if (c !== void 0 && (m = "" + c), t.key !== void 0 && (m = "" + t.key), "key" in t) {
+      c = {};
       for (var y in t)
-        y !== "key" && (l[y] = t[y]);
-    } else l = t;
-    return t = l.ref, {
+        y !== "key" && (c[y] = t[y]);
+    } else c = t;
+    return t = c.ref, {
       $$typeof: r,
-      type: c,
+      type: i,
       key: m,
       ref: t !== void 0 ? t : null,
-      props: l
+      props: c
     };
   }
   return E.Fragment = a, E.jsx = s, E.jsxs = s, E;
@@ -101,15 +101,15 @@ function le() {
       }
       if (n) {
         n = console;
-        var i = n.error, d = typeof Symbol == "function" && Symbol.toStringTag && e[Symbol.toStringTag] || e.constructor.name || "Object";
-        return i.call(
+        var l = n.error, d = typeof Symbol == "function" && Symbol.toStringTag && e[Symbol.toStringTag] || e.constructor.name || "Object";
+        return l.call(
           n,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
           d
         ), a(e);
       }
     }
-    function c(e) {
+    function i(e) {
       if (e === w) return "<>";
       if (typeof e == "object" && e !== null && e.$$typeof === O)
         return "<...>";
@@ -124,7 +124,7 @@ function le() {
       var e = T.A;
       return e === null ? null : e.getOwner();
     }
-    function l() {
+    function c() {
       return Error("react-stack-top-frame");
     }
     function m(e) {
@@ -135,14 +135,14 @@ function le() {
       return e.key !== void 0;
     }
     function y(e, n) {
-      function i() {
+      function l() {
         I || (I = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
           n
         ));
       }
-      i.isReactWarning = !0, Object.defineProperty(e, "key", {
-        get: i,
+      l.isReactWarning = !0, Object.defineProperty(e, "key", {
+        get: l,
         configurable: !0
       });
     }
@@ -152,14 +152,14 @@ function le() {
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), e = this.props.ref, e !== void 0 ? e : null;
     }
-    function h(e, n, i, d, g, v, N, A) {
-      return i = v.ref, e = {
+    function h(e, n, l, d, g, v, N, A) {
+      return l = v.ref, e = {
         $$typeof: P,
         type: e,
         key: n,
         props: v,
         _owner: g
-      }, (i !== void 0 ? i : null) !== null ? Object.defineProperty(e, "ref", {
+      }, (l !== void 0 ? l : null) !== null ? Object.defineProperty(e, "ref", {
         enumerable: !1,
         get: b
       }) : Object.defineProperty(e, "ref", { enumerable: !1, value: null }), e._store = {}, Object.defineProperty(e._store, "validated", {
@@ -184,7 +184,7 @@ function le() {
         value: A
       }), Object.freeze && (Object.freeze(e.props), Object.freeze(e)), e;
     }
-    function u(e, n, i, d, g, v, N, A) {
+    function u(e, n, l, d, g, v, N, A) {
       var f = n.children;
       if (f !== void 0)
         if (d)
@@ -215,13 +215,13 @@ React keys must be passed directly to JSX without using spread:
           f
         ), L[f + d] = !0);
       }
-      if (f = null, i !== void 0 && (s(i), f = "" + i), m(n) && (s(n.key), f = "" + n.key), "key" in n) {
-        i = {};
+      if (f = null, l !== void 0 && (s(l), f = "" + l), m(n) && (s(n.key), f = "" + n.key), "key" in n) {
+        l = {};
         for (var S in n)
-          S !== "key" && (i[S] = n[S]);
-      } else i = n;
+          S !== "key" && (l[S] = n[S]);
+      } else l = n;
       return f && y(
-        i,
+        l,
         typeof e == "function" ? e.displayName || e.name || "Unknown" : e
       ), h(
         e,
@@ -229,7 +229,7 @@ React keys must be passed directly to JSX without using spread:
         v,
         g,
         t(),
-        i,
+        l,
         N,
         A
       );
@@ -247,31 +247,31 @@ React keys must be passed directly to JSX without using spread:
     };
     var I, Y = {}, D = x.react_stack_bottom_frame.bind(
       x,
-      l
-    )(), $ = k(c(l)), L = {};
-    R.Fragment = w, R.jsx = function(e, n, i, d, g) {
+      c
+    )(), $ = k(i(c)), L = {};
+    R.Fragment = w, R.jsx = function(e, n, l, d, g) {
       var v = 1e4 > T.recentlyCreatedOwnerStacks++;
       return u(
         e,
         n,
-        i,
+        l,
         !1,
         d,
         g,
         v ? Error("react-stack-top-frame") : D,
-        v ? k(c(e)) : $
+        v ? k(i(e)) : $
       );
-    }, R.jsxs = function(e, n, i, d, g) {
+    }, R.jsxs = function(e, n, l, d, g) {
       var v = 1e4 > T.recentlyCreatedOwnerStacks++;
       return u(
         e,
         n,
-        i,
+        l,
         !0,
         d,
         g,
         v ? Error("react-stack-top-frame") : D,
-        v ? k(c(e)) : $
+        v ? k(i(e)) : $
       );
     };
   })()), R;
@@ -309,7 +309,7 @@ function fe(r) {
         value: a.value,
         label: a.title ?? a.name ?? void 0
       };
-    const s = Object.keys(a).find((c) => typeof a[c] == "number");
+    const s = Object.keys(a).find((i) => typeof a[i] == "number");
     if (s) return { value: a[s], label: a.category ?? a.title };
   }
   if (typeof r == "object") {
@@ -321,7 +321,7 @@ function fe(r) {
 function me(r) {
   return Array.isArray(r) && r.length > 0 ? r : typeof r == "object" && r !== null ? [r] : [];
 }
-async function J(r, a, s, c = void 0, t = void 0, l = {}) {
+async function J(r, a, s, i = void 0, t = void 0, c = {}) {
   try {
     let m = s;
     return m || (m = (await fetch(r.baseURL + r.registerQuery, {
@@ -342,8 +342,8 @@ async function J(r, a, s, c = void 0, t = void 0, l = {}) {
       },
       body: JSON.stringify({
         queryid: m,
-        filter: l,
-        refid: c,
+        filter: c,
+        refid: i,
         page: 0,
         limit: 1e4
       })
@@ -352,8 +352,8 @@ async function J(r, a, s, c = void 0, t = void 0, l = {}) {
     throw m;
   }
 }
-function be({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) {
-  const { source: t } = r, [l, m] = W(0);
+function be({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) {
+  const { source: t } = r, [c, m] = W(0);
   return G(() => {
     (async () => {
       let b = {};
@@ -379,7 +379,7 @@ function be({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) 
             orderby: t.orderby ?? "",
             groupby: t.groupby ?? ""
           });
-          const p = await J(s, u, t?.queryid, void 0, c);
+          const p = await J(s, u, t?.queryid, void 0, i);
           b = p?.data?.data ?? p?.data ?? {};
         } catch (u) {
           console.error("API fetch failed:", u);
@@ -388,10 +388,10 @@ function be({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) 
       const h = fe(b);
       m(h);
     })();
-  }, [JSON.stringify(t)]), /* @__PURE__ */ o.jsx("div", { className: "flex flex-col justify-center", children: /* @__PURE__ */ o.jsx("span", { className: "text-3xl text-center tracking-tight", children: l?.value ?? "--" }) });
+  }, [JSON.stringify(t)]), /* @__PURE__ */ o.jsx("div", { className: "flex flex-col justify-center", children: /* @__PURE__ */ o.jsx("span", { className: "text-3xl text-center tracking-tight", children: c?.value ?? "--" }) });
 }
-function pe({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) {
-  const { source: t } = r, [l, m] = W(0);
+function pe({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) {
+  const { source: t } = r, [c, m] = W(0);
   if (G(() => {
     (async () => {
       let h = {};
@@ -417,7 +417,7 @@ function pe({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) 
             orderby: t.orderby ?? "",
             groupby: t.groupby ?? ""
           });
-          const x = await J(s, p, t?.queryid, void 0, c);
+          const x = await J(s, p, t?.queryid, void 0, i);
           h = x?.data?.data ?? x?.data ?? [];
         } catch (p) {
           console.error("API fetch failed:", p);
@@ -426,33 +426,33 @@ function pe({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) 
       const u = me(h);
       m(u);
     })();
-  }, [JSON.stringify(t)]), !Array.isArray(l))
-    return console.warn("GridCard expected array but got:", l), /* @__PURE__ */ o.jsx("div", { children: "No table data" });
-  if (!l.length) return /* @__PURE__ */ o.jsx("div", { children: "No records found" });
-  const y = Object.keys(l[0] || {});
+  }, [JSON.stringify(t)]), !Array.isArray(c))
+    return console.warn("GridCard expected array but got:", c), /* @__PURE__ */ o.jsx("div", { children: "No table data" });
+  if (!c.length) return /* @__PURE__ */ o.jsx("div", { children: "No records found" });
+  const y = Object.keys(c[0] || {});
   return /* @__PURE__ */ o.jsx("div", { className: "w-full overflow-auto rounded-lg ", children: /* @__PURE__ */ o.jsxs("table", { className: "w-full text-sm ", children: [
     /* @__PURE__ */ o.jsx("thead", { className: "bg-neutral-100 ", children: /* @__PURE__ */ o.jsx("tr", { children: y.map((b) => /* @__PURE__ */ o.jsx("th", { className: "p-3 text-left font-semibold capitalize", children: b.replace(/_/g, " ") }, b)) }) }),
-    /* @__PURE__ */ o.jsx("tbody", { children: l.map((b, h) => /* @__PURE__ */ o.jsx("tr", { className: "odd:bg-white even:bg-neutral-50", children: y.map((u) => /* @__PURE__ */ o.jsx("td", { className: "p-3  ", children: b[u] }, u)) }, h)) })
+    /* @__PURE__ */ o.jsx("tbody", { children: c.map((b, h) => /* @__PURE__ */ o.jsx("tr", { className: "odd:bg-white even:bg-neutral-50", children: y.map((u) => /* @__PURE__ */ o.jsx("td", { className: "p-3  ", children: b[u] }, u)) }, h)) })
   ] }) });
 }
-const he = ({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: c }) => {
+const he = ({ cardConfig: r, methods: a = {}, sqlOpsUrls: s, module_refid: i }) => {
   if (!r?.config?.type) return null;
   switch (r?.config.type) {
     case "number":
-      return /* @__PURE__ */ o.jsx(be, { module_refid: c, cardConfig: r, methods: a, sqlOpsUrls: s });
+      return /* @__PURE__ */ o.jsx(be, { module_refid: i, cardConfig: r, methods: a, sqlOpsUrls: s });
     case "grid":
-      return /* @__PURE__ */ o.jsx(pe, { module_refid: c, cardConfig: r, methods: a, sqlOpsUrls: s });
+      return /* @__PURE__ */ o.jsx(pe, { module_refid: i, cardConfig: r, methods: a, sqlOpsUrls: s });
     default:
-      return /* @__PURE__ */ o.jsx(oe, { module_refid: c, graph_config: r, methods: a, sqlOpsConfig: s });
+      return /* @__PURE__ */ o.jsx(oe, { module_refid: i, graph_config: r, methods: a, sqlOpsConfig: s });
   }
 };
-function ye({ config: r, methods: a, sqlOpsUrls: s, module_refid: c }) {
-  const t = r.width ?? 6, l = r?.config?.type === "number";
+function ye({ config: r, methods: a, sqlOpsUrls: s, module_refid: i }) {
+  const t = r.width ?? 6, c = r?.config?.type === "number";
   return /* @__PURE__ */ o.jsxs(
     "div",
     {
       className: `
-    ${l ? "col-span-6" : "col-span-12"}
+    ${c ? "col-span-6" : "col-span-12"}
     md:col-span-6
     ${ue[de(Number(t))] || "lg:col-span-4"}
     bg-white border border-neutral-200
@@ -462,12 +462,17 @@ function ye({ config: r, methods: a, sqlOpsUrls: s, module_refid: c }) {
   `,
       children: [
         /* @__PURE__ */ o.jsx("div", { className: " p-1 flex items-center justify-between border-neutral-200 ", children: /* @__PURE__ */ o.jsx("h2", { className: "text-base  text-neutral-700 text-xs ", children: r.title }) }),
-        /* @__PURE__ */ o.jsx("div", { className: "p-1 flex-1 mb-5", children: /* @__PURE__ */ o.jsx(he, { module_refid: c, cardConfig: r, methods: a ?? {}, sqlOpsUrls: s }) })
+        /* @__PURE__ */ o.jsx("div", { className: "p-1 flex-1 mb-5", children: /* @__PURE__ */ o.jsx(he, { module_refid: i, cardConfig: r, methods: a ?? {}, sqlOpsUrls: s }) })
       ]
     }
   );
 }
-function je({ dashboardJson: r, methods: a }) {
+function je({
+  dashboardJson: r,
+  methods: a,
+  handleAction: s = () => {
+  }
+}) {
   return /* @__PURE__ */ o.jsxs("div", { className: "px-4 py-2 space-y-1", children: [
     /* @__PURE__ */ o.jsxs("div", { className: "flex items-center justify-between", children: [
       /* @__PURE__ */ o.jsx("h1", { className: "text-2xl font-bold tracking-tight text-neutral-800", children: r.title }),
@@ -484,7 +489,19 @@ function je({ dashboardJson: r, methods: a }) {
         }
       )
     ] }),
-    /* @__PURE__ */ o.jsx("div", { className: "grid grid-cols-12 gap-1 auto-rows-min", children: Object.values(r.cards).map((s, c) => /* @__PURE__ */ o.jsx(ye, { module_refid: r?.module_refid, config: s, methods: a || {}, sqlOpsUrls: r.endPoints }, c)) })
+    /* @__PURE__ */ o.jsx("div", { className: "grid grid-cols-12 gap-1 auto-rows-min", children: Object.values(r.cards).map((i, t) => /* @__PURE__ */ o.jsx(
+      ye,
+      {
+        module_refid: r?.module_refid,
+        config: i,
+        onClick: () => {
+          i?.url && s(i?.url);
+        },
+        methods: a || {},
+        sqlOpsUrls: r.endPoints
+      },
+      t
+    )) })
   ] });
 }
 export {

@@ -1,7 +1,12 @@
 import Card from "./components/Card.js";
 import type { DashboardProps } from "./Dashboard.types.js";
 import { Settings } from "lucide-react";
-export default function Dashboard({ dashboardJson, methods }: DashboardProps) {
+export default function Dashboard({
+  dashboardJson,
+
+  methods,
+  handleAction = () => { },
+}: DashboardProps) {
 
   return (
     <div className="px-4 py-2 space-y-1">
@@ -27,7 +32,16 @@ export default function Dashboard({ dashboardJson, methods }: DashboardProps) {
 
       <div className="grid grid-cols-12 gap-1 auto-rows-min">
         {Object.values(dashboardJson.cards).map((card, i) => (
-          <Card module_refid={dashboardJson?.module_refid} key={i} config={card} methods={methods || {}} sqlOpsUrls={dashboardJson.endPoints} />
+          <Card
+            module_refid={dashboardJson?.module_refid}
+            key={i}
+            config={card}
+            onClick={() => {
+              if (card?.url) handleAction(card?.url);
+            }}
+            methods={methods || {}}
+            sqlOpsUrls={dashboardJson.endPoints}
+          />
         ))}
       </div>
     </div>

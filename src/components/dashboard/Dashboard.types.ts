@@ -19,6 +19,7 @@ export interface CardConfig {
     source: Record<string, any>;
     width?: number;
     card_type?: string;
+    url?:string;
 }
 
 export interface CardProps {
@@ -26,6 +27,7 @@ export interface CardProps {
     methods?: Record<string, Function>;
     sqlOpsUrls?: sqlOpsUrls | undefined;
     module_refid?: string | undefined;
+    onClick?: () => void;
 }
 
 export type ApiResponse<T = any> = {
@@ -49,10 +51,16 @@ export interface CardRendererProps {
     module_refid?: string | undefined
 }
 
+export interface DashData {
+    [key: string]: string | number | boolean | null | undefined;
+    // add other fields here...
+}
+
 export interface DashboardProps {
 
     dashboardJson: DashboardJson;
-    methods?: Record<string, Function>
+    methods?: Record<string, Function>;
+    handleAction?: (value:string) => void;
 
 
 
