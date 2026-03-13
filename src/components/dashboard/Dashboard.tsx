@@ -16,7 +16,9 @@ export default function Dashboard({
         <h1 className="text-2xl font-bold tracking-tight text-neutral-800">
           {dashboardJson.title}
         </h1>
-        <button
+        
+        {/* Commented because of the other projects requirenment */}
+        {/* <button
           className="
             p-2 rounded-lg border border-neutral-200 
             hover:bg-neutral-100 
@@ -25,7 +27,7 @@ export default function Dashboard({
           onClick={() => console.log("Open Settings")}
         >
           <Settings size={20} className="text-neutral-600 " />
-        </button>
+        </button> */}
       </div>
 
       {/* Cards Grid */}
