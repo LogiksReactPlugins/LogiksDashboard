@@ -334,6 +334,7 @@ export declare const example2: {
     cards: {
         card1: {
             title: string;
+            description: string;
             policy_1: string;
             config: {
                 type: string;
@@ -347,6 +348,7 @@ export declare const example2: {
         };
         card2: {
             title: string;
+            description: string;
             policy_1: string;
             config: {
                 type: string;

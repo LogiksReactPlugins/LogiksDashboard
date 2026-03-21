@@ -18,6 +18,7 @@ export interface CardConfig {
     width?: number;
     card_type?: string;
     url?: string;
+    description?: string;
 }
 export interface CardProps {
     config: CardConfig;
